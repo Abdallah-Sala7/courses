@@ -1,5 +1,6 @@
 .navbar{
   background-color: var(--primary-color);
+  border-bottom: 1px solid var(--light-gray);
 }
 
 .nav-layout{
@@ -20,25 +21,103 @@
   object-fit: contain;
 }
 
-.nav-layout .nav-links{
-  position: absolute;
+.nav-layout .nav-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-layout .nav-header,
+.nav-layout .nav-contact{
+  width: 80%;
+  padding: 20px 0;
+  margin: auto;
+}
+
+.nav-layout .nav-menu{
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 111;
   height: 100%;
   width: 75%;
   transform: translateX(-100%);
+  opacity: 0;
   background-color: var(--white-color);
+  transition: all 0.3s ease;
+}
+
+.nav-layout .nav-menu.oppenned{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.nav-layout .nav-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-layout .nav-header,
+.nav-layout .nav-contact{
+  width: 80%;
+  padding: 20px 0;
+  margin: auto;
+}
+
+.nav-layout .nav-contact h1{
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.nav-layout .nav-contact .call-detail li:not(:last-child){
+  margin-bottom: 10px;
+}
+
+.nav-layout .nav-contact .call-detail li :is(a, p){
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-layout .nav-contact .call-detail li:first-child a{
+  color: var(--secondary-color);
+}
+
+.nav-layout .nav-contact .social-links{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-layout .nav-contact .social-links li a{
+  display:inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.nav-layout .nav-contact .social-links a img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: var(--dark-gray-filter);
+  transition: 0.3s ease filter;
+}
+
+.nav-layout .nav-contact .social-links a:hover img{
+  filter: var(--third-color-filter);
+}
+
+.nav-layout .nav-links{
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
   gap: 20px;
-  transition: all 0.3s ease;
-}
-
-.nav-layout .nav-links.oppenned{
-  transform: translateX(0);
 }
 
 .nav-layout .nav-links li{
@@ -53,8 +132,8 @@
 }
 
 .nav-layout .nav-links li a,
-.nav-layout .nav-detils .login{
-  font-size: 1.2rem;
+.nav-layout .login{
+  font-size: 1rem;
   font-weight: 500;
   padding: 10px 15px;
   border-radius: 8px;
@@ -62,8 +141,8 @@
 }
 
 .nav-layout .nav-links li a:hover{
-  background-color: #6440fb12;
-  color: var(--secondary-color);
+  background-color: var(--light-gray);
+  color: var(--third-color);
 }
 
 .nav-layout .nav-detils{
@@ -104,10 +183,9 @@
   border-radius: 50%;
 }
 
-.nav-layout .nav-detils .login{
-  color: #fff;
-  color: var(--primary-color);
-  background-color: var(--white-color);
+.nav-layout .login{
+  color: var(--white-color);
+  background-color: var(--third-color);
   padding: 10px 20px;
 }
 
@@ -129,23 +207,46 @@
   filter: var(--white-filter);
 }
 
+.nav-layout .close-menu img{
+  filter:none ;
+}
+
+
+
 
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 576px) { 
-  .nav-layout .nav-links{
+  .nav-layout .nav-menu{
     width: 350px;
   }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-  .nav-layout .nav-links{
+  .nav-layout .nav-menu{
     position: static;
-    flex-direction: row;
     background-color: transparent;
     transform: translateX(0);
     width: auto;
+    opacity: 1;
+  }
+
+  .nav-layout .nav-header,
+  .nav-layout .nav-contact{
+    display: none;
+  }
+
+  .nav-layout .login{
+    color: var(--primary-color);
+    background-color: var(--white-color);
+  }
+
+  .nav-layout .nav-menu .nav-links{
+    border: none;
+    padding: 0;
+    flex-direction: row;
+    gap: 20px;
   }
   .nav-layout .nav-links li{
     width: auto;
@@ -156,6 +257,7 @@
   }
   .nav-layout .nav-links li a:hover{
     background-color: rgba(255, 255, 255, 0.15);
+    color: var(--secondary-color);
   }
   .nav-layout .nav-detils{
     display: flex;

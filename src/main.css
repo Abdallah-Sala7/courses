@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'FiraSans', sans-serif;
 }
 
 :root {
@@ -10,8 +11,37 @@
   --third-color: #6440FB;
   --white-color: #fff;
   --dark-color: #121212;
+  --light-gray: #6440fb12;
+  --dark-gray: #858585;
 
   --white-filter:invert(100%) sepia(0%) saturate(7488%) hue-rotate(66deg) brightness(103%) contrast(102%);
+  --dark-gray-filter:invert(50%) sepia(22%) saturate(0%) hue-rotate(205deg) brightness(101%) contrast(82%);
+  --primary-color-filter:invert(5%) sepia(66%) saturate(7467%) hue-rotate(275deg) brightness(86%) contrast(144%);
+  --third-color-filter: invert(23%) sepia(94%) saturate(3088%) hue-rotate(246deg) brightness(99%) contrast(99%);
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  src: url('./assets/fonts/firasans/FiraSans-Thin.woff2');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  src: url('./assets/fonts/firasans/FiraSans-Light.woff2');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  src: url('./assets/fonts/firasans/FiraSans-Medium.woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  src: url('./assets/fonts/firasans/FiraSans-Bold.woff2');
+  font-weight: 700;
 }
 
 ul{
@@ -20,7 +50,7 @@ ul{
 
 a{
   text-decoration: none;
-  color: #fff;
+  color: inherit;
 }
 
 .container {
