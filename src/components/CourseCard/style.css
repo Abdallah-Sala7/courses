@@ -1,0 +1,113 @@
+.course-card{
+  min-width: 270px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.course-card .course-card-img{
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.course-card .course-card-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s linear, filter 0.3s linear 0.3s;
+}
+
+.course-card .course-card-img:hover img{
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+.course-card .course-rate{
+  margin-bottom: 15px;
+}
+
+.course-card .course-title{
+  color: var(--dark-color);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.3s linear color;
+}
+
+.course-card .course-title:hover{
+  color: var(--third-color);
+}
+
+.course-card .course-info{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.course-card .course-info .course-info-item-icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.course-card .course-info .course-info-item-text{
+  color: var(--dark-color);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.course-card .course-card-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid var(--light-gray);
+}
+
+.course-card .course-card-details .constructor{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.course-card .course-card-details .constructor .constructor-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.course-card .course-card-details .constructor .constructor-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.course-card .course-card-details .constructor .constructor-name{
+  color: var(--dark-color);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.course-card .course-card-details .course-card-price{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.course-card .course-card-details .course-card-price .old-price{
+  color: var(--dark-gray);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.course-card .course-card-details .course-card-price .new-price{
+  color: var(--third-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
