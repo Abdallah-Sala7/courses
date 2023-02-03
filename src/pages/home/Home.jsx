@@ -4,13 +4,14 @@ import './home.css'
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import {studentIcon, coursesIcon, learnIcon, homeImgOne, homeImgTow, homeImgThree, brandOne, brandTow, brandThree, brandFour,brandFive, brandSix, categorie1, categorie2, categorie3, categorie4, categorie5, categorie6} from '../../assets/images'
+import {studentIcon, coursesIcon, learnIcon, homeImgOne, homeImgTow, homeImgThree, brandOne, brandTow, brandThree, brandFour,brandFive, brandSix, categorie1, categorie2, categorie3, categorie4, categorie5, categorie6, check, learning, working, education} from '../../assets/images'
 import CategorieBox from '../../components/CategorieBox'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper';
 import CourseCard from '../../components/CourseCard';
 import TestimonialCard from '../../components/TestimonialCard';
+import LearnCard from '../../components/LearnCard';
 
 
 
@@ -329,7 +330,7 @@ const Home = () => {
             <div className="testimonial-details">
               <div className="details-box">
                 <p className="details-number">
-                  1,000,000+
+                  380,000+
                 </p>
 
                 <p className="details-info">
@@ -339,37 +340,129 @@ const Home = () => {
 
               <div className="details-box">
                 <p className="details-number">
-                  1,000,000+
+                  50,000+
                 </p>
 
                 <p className="details-info">
-                  students enrolled
+                  Total course views
                 </p>
               </div>
 
               <div className="details-box">
                 <p className="details-number">
-                  1,000,000+
+                  18,000+
                 </p>
 
                 <p className="details-info">
-                  students enrolled
+                  Five-star course reviews
                 </p>
               </div>
 
               <div className="details-box">
                 <p className="details-number">
-                  1,000,000+
+                  100,000+
                 </p>
 
                 <p className="details-info">
-                  students enrolled
+                  students comunity
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section> 
+
+      <section className="join">
+        <div className="container">
+          <div className="join-layout">
+            <div className="join-contint">
+              <h1 className="section-title">
+                <span>learn </span> new skills when and where you like.
+              </h1>
+
+              <p className="section-info">
+                Use the list below to bring attention to your product’s key differentiator.
+              </p>
+
+              <ul className="join-feature">
+                <li>
+                  <span className='join-icon'>
+                    <img 
+                      src={check}
+                      alt=""
+                      loading='lazy' 
+                    />
+                  </span>
+                  <p>Hand-Picked Authors</p>
+                </li>
+
+                <li>
+                  <span className='join-icon'>
+                    <img 
+                      src={check}
+                      alt=""
+                      loading='lazy' 
+                    />
+                  </span>
+                  <p>Easy To Follow Curriculum</p>
+                </li>
+
+                <li>
+                  <span className='join-icon'>
+                    <img 
+                      src={check}
+                      alt=""
+                      loading='lazy' 
+                    />
+                  </span>
+                  <p>Free Courses</p>
+                </li>
+
+                <li>
+                  <span className='join-icon'>
+                    <img 
+                      src={check}
+                      alt=""
+                      loading='lazy' 
+                    />
+                  </span>
+                  <p>Money-Back Guarantee</p>
+                </li>
+              </ul>
+
+              <a href="#" className="join-btn">
+                join now
+              </a>
+            </div>
+
+            <div className="join-img">
+              <img
+                src={homeImgOne}
+                alt=""
+                loading='lazy'
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="learn">
+        <div className="container">
+          <h1 className="section-title">
+            why learn with our courses?
+          </h1>
+
+          <p className="section-info">
+            Explore thousands of courses from top universities and companies
+          </p>
+
+          <div className="learn-layout">
+            <LearnCard logo={learning} title={'01. Learn'} desc={'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.'} />
+            <LearnCard logo={education} title={'02. Graduate'} desc={'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.'} />
+            <LearnCard logo={working} title={'03. Work'} desc={'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.'} />
+          </div>
+        </div>
+      </section>
     </>
   )
 }

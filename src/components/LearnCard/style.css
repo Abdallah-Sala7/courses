@@ -1,0 +1,53 @@
+.learn-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--light-gray);
+  transition: 0.3s ease-in-out all;
+}
+
+.learn-card:hover{
+  background-color: var(--white-color);
+}
+
+.learn-card .learn-logo{
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;
+}
+
+.learn-card .learn-logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: var(--secondary-filter);
+  transition: 0.3s ease-in-out filter;
+}
+
+.learn-card:hover .learn-logo img{
+  filter: var(--primary-filter);
+}
+
+.learn-card .learn-title{
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white-color);
+  margin-bottom: 20px;
+  transition: 0.3s ease-in-out color;
+}
+
+.learn-card .learn-desc{
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--white-color);
+  text-align: center;
+  transition: 0.3s ease-in-out color;
+}
+
+.learn-card:hover :is(.learn-title, .learn-desc){
+  color: var(--primary-color);
+}

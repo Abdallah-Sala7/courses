@@ -18,6 +18,11 @@ export {default as studentIcon} from './icons/student.svg'
 export {default as document} from './icons/document.png'
 export {default as clock} from './icons/clock.png'
 export {default as barChart} from './icons/bar-chart.png'
+export {default as check} from './icons/check.png'
+
+export {default as learning} from './icons/online-learning.png'
+export {default as education} from './icons/education.png'
+export {default as working} from './icons/worker.png'
 
 // export home imgs
 export {default as homeImgOne} from './home/about.png'

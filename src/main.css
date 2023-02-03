@@ -18,6 +18,7 @@
   --dark-gray-filter:invert(50%) sepia(22%) saturate(0%) hue-rotate(205deg) brightness(101%) contrast(82%);
   --primary-color-filter:invert(5%) sepia(66%) saturate(7467%) hue-rotate(275deg) brightness(86%) contrast(144%);
   --third-color-filter: invert(23%) sepia(94%) saturate(3088%) hue-rotate(246deg) brightness(99%) contrast(99%);
+  --secondary-filter:invert(90%) sepia(24%) saturate(5225%) hue-rotate(84deg) brightness(103%) contrast(104%);
 }
 
 @font-face {
