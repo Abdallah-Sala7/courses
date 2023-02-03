@@ -9,6 +9,8 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
 
+  menuOpen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto'
+
   const handelMenu = (e) => {
     setMenuOpen(!menuOpen)
     e.preventDefault();

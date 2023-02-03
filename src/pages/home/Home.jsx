@@ -10,6 +10,7 @@ import CategorieBox from '../../components/CategorieBox'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper';
 import CourseCard from '../../components/CourseCard';
+import TestimonialCard from '../../components/TestimonialCard';
 
 
 
@@ -272,10 +273,103 @@ const Home = () => {
               <CourseCard />
               <CourseCard />
               <CourseCard />
+              <CourseCard />
             </div>
           </div>
         </div>
       </section>
+
+      <section className="testimonial">
+        <div className="container">
+          <h1 className="section-title">
+            what people say
+          </h1>
+
+          <p className="section-info">
+            Explore thousands of courses from top universities and companies
+          </p>
+
+          <div className="testimonial-layout">
+            <div className="testimonial-contint">
+              <Swiper
+                slidesPerView={1.2}
+                spaceBetween={10}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 20,
+                  },
+                }}
+                modules={[Autoplay]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <TestimonialCard />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <TestimonialCard />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <TestimonialCard />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <TestimonialCard />
+                </SwiperSlide>
+              </Swiper>              
+            </div>
+
+            <div className="testimonial-details">
+              <div className="details-box">
+                <p className="details-number">
+                  1,000,000+
+                </p>
+
+                <p className="details-info">
+                  students enrolled
+                </p>
+              </div>
+
+              <div className="details-box">
+                <p className="details-number">
+                  1,000,000+
+                </p>
+
+                <p className="details-info">
+                  students enrolled
+                </p>
+              </div>
+
+              <div className="details-box">
+                <p className="details-number">
+                  1,000,000+
+                </p>
+
+                <p className="details-info">
+                  students enrolled
+                </p>
+              </div>
+
+              <div className="details-box">
+                <p className="details-number">
+                  1,000,000+
+                </p>
+
+                <p className="details-info">
+                  students enrolled
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> 
     </>
   )
 }

@@ -15,6 +15,9 @@ export {default as shoppingIcon} from './icons/shopping-bag.png'
 export {default as learnIcon} from './icons/learn.svg'
 export {default as coursesIcon} from './icons/courses.svg'
 export {default as studentIcon} from './icons/student.svg'
+export {default as document} from './icons/document.png'
+export {default as clock} from './icons/clock.png'
+export {default as barChart} from './icons/bar-chart.png'
 
 // export home imgs
 export {default as homeImgOne} from './home/about.png'
@@ -38,3 +41,8 @@ export {default as categorie3} from './home/c3.svg'
 export {default as categorie4} from './home/c4.svg'
 export {default as categorie5} from './home/c5.svg'
 export {default as categorie6} from './home/c6.svg'
+
+
+// ***********
+
+export {default as ali} from './ali.png'

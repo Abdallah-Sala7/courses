@@ -1,25 +1,49 @@
 .course-card{
-  min-width: 270px;
+  position: relative;
   overflow: hidden;
   border-radius: 10px;
 }
 
+.course-card .sales{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 111;
+  color: var(--white-color);
+  background-color: #E8543E;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 300;
+}
+
 .course-card .course-card-img{
+  position: relative;
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.course-card .course-card-img .overlay{
+  position: absolute;
+  display: block;
+  opacity: 0;
+  transition: 0.3s linear;
+}
+
+.course-card:hover .course-card-img .overlay{
+  opacity: 1;
 }
 
 .course-card .course-card-img img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s linear, filter 0.3s linear 0.3s;
+  transition: scale 0.3s linear;
 }
 
-.course-card .course-card-img:hover img{
-  transform: scale(1.1);
-  filter: brightness(0.8);
+.course-card:hover .course-card-img img{
+  scale: 1.2;
 }
 
 .course-card .course-rate{
@@ -47,10 +71,22 @@
   margin-bottom: 15px;
 }
 
+.course-card .course-info .course-info-item {
+  display: flex;
+  align-items: center;
+}
+
 .course-card .course-info .course-info-item-icon{
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   margin-right: 5px;
+}
+
+.course-card .course-info .course-info-item-icon img{
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .course-card .course-info .course-info-item-text{
