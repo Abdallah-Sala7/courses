@@ -1,45 +1,46 @@
-import { useState } from 'react';
+import { useEffect} from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper';
+import Aos from 'aos';
 
 import './home.css'
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'aos/dist/aos.css';
 
-import {studentIcon, coursesIcon, learnIcon, homeImgOne, homeImgTow, homeImgThree, brandOne, brandTow, brandThree, brandFour,brandFive, brandSix, categorie1, categorie2, categorie3, categorie4, categorie5, categorie6, check, learning, working, education} from '../../assets/images'
-import CategorieBox from '../../components/CategorieBox'
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper';
+import {studentIcon, coursesIcon, learnIcon, homeImgOne, homeImgTow, homeImgThree, brandOne, brandTow, brandThree, brandFour,brandFive, brandSix, categorie1, categorie2, categorie3, categorie4, categorie5, categorie6, check, learning, working, education, instructorImg} from '../../assets/images'
 import CourseCard from '../../components/CourseCard';
 import TestimonialCard from '../../components/TestimonialCard';
 import LearnCard from '../../components/LearnCard';
-
+import CategorieBox from '../../components/CategorieBox'
+import NavTap from '../../components/NavTap';
+import InstructorCard from '../../components/InstructorCard';
 
 
 const Home = () => {
-  const [navTap, setNavTap] = useState('all')
 
-  const handelNavTap = (e, tap) => {
-    setNavTap(tap);
-    e.preventDefault();
-  }
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, [])
+
   return (
     <>
       <header>
         <div className="container">
           <div className="header-layout">
             <div className="header-details">
-              <h1 className="header-title">
+              <h1 className="header-title" data-aos="fade-up">
                 learn new skills online with top
                 <span>
                   Educators
                 </span>
               </h1>
 
-              <p className="header-info">
+              <p className="header-info" data-aos="fade-up" data-aos-delay="200" >
                 build skills with courses, certificates, and degrees online from world-class universities and companies.
               </p>
 
-              <div className="header-btn">
+              <div className="header-btn" data-aos="fade-up" data-aos-delay="400">
                 <a href="#" className="join-btn">
                   join for free
                 </a>
@@ -49,7 +50,7 @@ const Home = () => {
                 </a>
               </div>
 
-              <div className="header-features">
+              <div className="header-features" data-aos="fade-up">
                 <a href="#">
                   <img
                     src={studentIcon}
@@ -85,20 +86,25 @@ const Home = () => {
                   src={homeImgOne}
                   alt="img1"
                   loading='lazy'
+                  data-aos="fade-up"
                 />
               </div>
 
-              <div className="img-box-right">
+              <div className="img-box-right" >
                 <img
                   src={homeImgTow}
                   alt="img2"
                   loading='lazy'
+                  data-aos="fade-up"
+                  data-aos-delay="300"
                 />
 
                 <img
                   src={homeImgThree}
                   alt="img3"
                   loading='lazy'
+                  data-aos="fade-up"
+                  data-aos-delay="600"
                 />
               </div>
             </div>
@@ -114,11 +120,11 @@ const Home = () => {
 
       <section className="our-clint">
         <div className="container">
-          <p className="section-info">
+          <p className="section-info" data-aos="fade-up">
             Trusted by the world’s best
           </p>
 
-          <div className="clint-layout">
+          <div className="clint-layout" data-aos="fade-up">
             <a href="#" className="clint">
               <img
                 src={brandOne}
@@ -172,15 +178,15 @@ const Home = () => {
 
       <section className="categorie">
         <div className="container">
-          <h2 className="section-title">
+          <h2 className="section-title" data-aos="fade-up">
             top categories
           </h2>
 
-          <p className="section-info">
+          <p className="section-info" data-aos="fade-up">
             Explore thousands of courses from top universities and companies
           </p>
 
-          <div className="categorie-layout">
+          <div className="categorie-layout" data-aos="fade-up">
             <Swiper
               slidesPerView={1.2}
               spaceBetween={10}
@@ -239,37 +245,16 @@ const Home = () => {
 
       <section className="popular-courses">
         <div className="container">
-          <h2 className="section-title">
+          <h1 className="section-title" data-aos="fade-up">
             our most popular courses
-          </h2>
+          </h1>
 
-          <p className="section-info">
+          <p className="section-info" data-aos="fade-up">
             Explore thousands of courses from top universities and companies
           </p>
 
           <div className="popular-layout">
-            <div className="popular-nav">
-              <a href="#" onClick={(e)=> handelNavTap(e, 'all')} className={`popular-tap ${navTap === 'all' && 'active'}`}>
-                all
-              </a>
-
-              <a href="#" onClick={(e)=> handelNavTap(e, 'software')} className={`popular-tap ${navTap === 'software' && 'active'}`} >
-                it & software
-              </a>
-
-              <a href="#" onClick={(e)=> handelNavTap(e, 'graphic')} className={`popular-tap ${navTap === 'graphic' && 'active'}`} >
-                design
-              </a>
-
-              <a href="#" onClick={(e)=> handelNavTap(e, 'marketing')} className={`popular-tap ${navTap === 'marketing' && 'active'}`} >
-                development
-              </a>
-
-              <a href="#" onClick={(e)=> handelNavTap(e, 'web')} className={`popular-tap ${navTap === 'web' && 'active'}`} >
-                marketing
-              </a>
-            </div>
-
+            <NavTap />
             <div className="popular-contint">
               <CourseCard />
               <CourseCard />
@@ -282,11 +267,11 @@ const Home = () => {
 
       <section className="testimonial">
         <div className="container">
-          <h1 className="section-title">
+          <h1 className="section-title" data-aos="fade-up">
             what people say
           </h1>
 
-          <p className="section-info">
+          <p className="section-info" data-aos="fade-up">
             Explore thousands of courses from top universities and companies
           </p>
 
@@ -328,7 +313,7 @@ const Home = () => {
             </div>
 
             <div className="testimonial-details">
-              <div className="details-box">
+              <div className="details-box" data-aos="fade-up">
                 <p className="details-number">
                   380,000+
                 </p>
@@ -338,7 +323,7 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="details-box">
+              <div className="details-box" data-aos="fade-up" data-aos-delay="100">
                 <p className="details-number">
                   50,000+
                 </p>
@@ -348,7 +333,7 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="details-box">
+              <div className="details-box" data-aos="fade-up" data-aos-delay="200">
                 <p className="details-number">
                   18,000+
                 </p>
@@ -358,7 +343,7 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="details-box">
+              <div className="details-box" data-aos="fade-up" data-aos-delay="300">
                 <p className="details-number">
                   100,000+
                 </p>
@@ -376,15 +361,15 @@ const Home = () => {
         <div className="container">
           <div className="join-layout">
             <div className="join-contint">
-              <h1 className="section-title">
+              <h1 className="section-title" data-aos="fade-up">
                 <span>learn </span> new skills when and where you like.
               </h1>
 
-              <p className="section-info">
+              <p className="section-info" data-aos="fade-up">
                 Use the list below to bring attention to your product’s key differentiator.
               </p>
 
-              <ul className="join-feature">
+              <ul className="join-feature" data-aos="fade-up">
                 <li>
                   <span className='join-icon'>
                     <img 
@@ -430,12 +415,12 @@ const Home = () => {
                 </li>
               </ul>
 
-              <a href="#" className="join-btn">
+              <a href="#" className="join-btn" data-aos="fade-up" data-aos-delay="100">
                 join now
               </a>
             </div>
 
-            <div className="join-img">
+            <div className="join-img" data-aos="fade-up">
               <img
                 src={homeImgOne}
                 alt=""
@@ -448,11 +433,11 @@ const Home = () => {
 
       <section className="learn">
         <div className="container">
-          <h1 className="section-title">
+          <h1 className="section-title" data-aos="fade-up">
             why learn with our courses?
           </h1>
 
-          <p className="section-info">
+          <p className="section-info" data-aos="fade-up">
             Explore thousands of courses from top universities and companies
           </p>
 
@@ -460,6 +445,31 @@ const Home = () => {
             <LearnCard logo={learning} title={'01. Learn'} desc={'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.'} />
             <LearnCard logo={education} title={'02. Graduate'} desc={'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.'} />
             <LearnCard logo={working} title={'03. Work'} desc={'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.'} />
+          </div>
+        </div>
+      </section>
+
+      <section className="instructors">
+        <div className="container">
+          <h1 className="instructors-title" data-aos="fade-up">
+            Learn from the best instructors
+          </h1>
+
+          <div className="instructors-info" data-aos="fade-up">
+            <p className='instructors-desc'>
+              Explore thousands of courses from top universities and companies
+            </p>
+
+            <a href="#" className='instructors-btn'>
+              view all instructors
+            </a>
+          </div>
+
+          <div className="instructors-layout">
+            <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
+            <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
+            <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
+            <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
           </div>
         </div>
       </section>

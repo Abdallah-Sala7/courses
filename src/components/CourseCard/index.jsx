@@ -4,7 +4,7 @@ import {document, clock, barChart, ali} from '../../assets/images'
 
 const CourseCard = ({ sales=false, oldPrice=false}) => {
   return (
-    <div className='course-card'>
+    <div className='course-card' data-aos="fade-up">
       {
         sales && <p className="sales">sale</p>
       }

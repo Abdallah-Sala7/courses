@@ -1,0 +1,26 @@
+.popular-nav{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  overflow-y: auto;
+}
+
+.popular-nav::-webkit-scrollbar{
+  display: none;
+}
+
+.popular-nav .popular-tap{
+  flex-shrink: 0;
+  font-size: .9rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: var(--dark-color);
+  transition: all 0.3s ease;
+}
+
+.popular-nav .popular-tap:is(:hover, .active) {
+  color: var(--third-color);
+  background-color: var(--light-gray);
+}

@@ -2,7 +2,7 @@ import './style.css'
 
 const LearnCard = ({logo, title, desc}) => {
   return (
-    <div className="learn-card">
+    <div className="learn-card" data-aos="fade-up">
       <div className="learn-logo">
         <img
           src={logo}

@@ -187,34 +187,6 @@ header .wave-container{
 
 
 /*************************popular**************** */
-
-.popular-layout .popular-nav{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-  overflow-y: auto;
-}
-
-.popular-layout .popular-nav::-webkit-scrollbar{
-  display: none;
-}
-
-.popular-layout .popular-nav .popular-tap{
-  flex-shrink: 0;
-  font-size: .9rem;
-  font-weight: 500;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: var(--dark-color);
-  transition: all 0.3s ease;
-}
-
-.popular-layout .popular-nav .popular-tap:is(:hover, .active) {
-  color: var(--third-color);
-  background-color: var(--light-gray);
-}
-
 .popular-layout .popular-contint{
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -359,12 +331,50 @@ header .wave-container{
   gap: 30px;
 }
 
+/* *********instructors************ */
 
+.instructors .instructors-title{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
 
+.instructors .instructors-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
 
+.instructors .instructors-info .instructors-desc{
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--primary-color);
+}
 
+.instructors .instructors-info .instructors-btn{
+  flex-shrink: 0;
+  font-size: .9rem;
+  font-weight: 500;
+  padding: 17px 25px;
+  border-radius: 8px;
+  color: var(--third-color);
+  background-color: var(--light-gray);
+  transition: all 0.3s linear;
+}
 
+.instructors .instructors-info .instructors-btn:hover{
+  color: var(--white-color);
+  background-color: var(--third-color);
+}
 
+.instructors .instructors-layout{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
 
 
 
@@ -393,6 +403,10 @@ header .wave-container{
 
   .join .join-layout .join-contint .join-btn{
     padding: 17px 40px;
+  }
+
+  .instructors .instructors-layout{
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }
@@ -441,10 +455,19 @@ header .wave-container{
   .learn .learn-layout{
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .instructors .instructors-layout{
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
   .popular-layout .popular-contint{
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .instructors .instructors-layout{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
 }

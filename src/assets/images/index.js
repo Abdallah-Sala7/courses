@@ -1,5 +1,4 @@
 // export logo
-
 export {default as logoWhite} from './logo/logo-white.svg'
 
 // export social logos
@@ -19,6 +18,10 @@ export {default as document} from './icons/document.png'
 export {default as clock} from './icons/clock.png'
 export {default as barChart} from './icons/bar-chart.png'
 export {default as check} from './icons/check.png'
+export {default as play} from './icons/play.png'
+export {default as star} from './icons/star.png'
+export {default as reading} from './icons/reading.png'
+
 
 export {default as learning} from './icons/online-learning.png'
 export {default as education} from './icons/education.png'
@@ -51,3 +54,4 @@ export {default as categorie6} from './home/c6.svg'
 // ***********
 
 export {default as ali} from './ali.png'
+export {default as instructorImg} from './instr.jpeg'

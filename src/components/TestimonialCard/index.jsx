@@ -1,10 +1,19 @@
+import { useEffect } from 'react';
+import Aos from 'aos';
+
 import './style.css'
+import 'aos/dist/aos.css';
 
 import { ali } from '../../assets/images'
 
+
 const TestimonialCard = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, [])
+
   return (
-    <div className="testimonial-card">
+    <div className="testimonial-card" data-aos="fade-up">
       <h3 className="testimonial-title">
         great course
       </h3>
