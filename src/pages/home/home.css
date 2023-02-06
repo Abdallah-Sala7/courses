@@ -344,6 +344,7 @@ header .wave-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 50px;
 }
@@ -355,7 +356,6 @@ header .wave-container{
 }
 
 .instructors .instructors-info .instructors-btn{
-  flex-shrink: 0;
   font-size: .9rem;
   font-weight: 500;
   padding: 17px 25px;
@@ -376,9 +376,44 @@ header .wave-container{
   gap: 30px;
 }
 
+/************************* start-learning************************ */
 
+.start-learning{
+  background-color: var(--third-color);
+}
 
+.start-learning .start-learning-layout{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
+.start-learning .start-learning-layout .start-learning-title{
+  color: var(--white-color);
+  font-size: 2rem;
+  max-width: 400px;
+  line-height: 1.7;
+}
+
+.start-learning .start-learning-layout .start-learning-title span{
+  color: var(--secondary-color);
+}
+
+.start-learning .start-learning-layout .start-learning-btn{
+  font-weight: 300;
+  padding: 17px 25px;
+  border-radius: 8px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  transition: all 0.3s linear;
+}
+
+.start-learning .start-learning-layout .start-learning-btn:hover{
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
 
 
 

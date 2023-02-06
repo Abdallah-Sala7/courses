@@ -50,8 +50,8 @@ const Home = () => {
                 </a>
               </div>
 
-              <div className="header-features" data-aos="fade-up">
-                <a href="#">
+              <div className="header-features">
+                <a href="#" data-aos="fade-up" data-aos-delay="500">
                   <img
                     src={studentIcon}
                     alt="students"
@@ -60,7 +60,7 @@ const Home = () => {
                   <p>Over 12 million students</p>
                 </a>
 
-                <a href="#">
+                <a href="#" data-aos="fade-up" data-aos-delay="500">
                   <img
                     src={coursesIcon}
                     alt="courses"
@@ -69,7 +69,7 @@ const Home = () => {
                   <p>More than 60,000 courses</p>
                 </a>
 
-                <a href="#">
+                <a href="#" data-aos="fade-up" data-aos-delay="500">
                   <img
                     src={learnIcon}
                     alt="learn"
@@ -111,10 +111,10 @@ const Home = () => {
           </div>
         </div>
 
-        <div class="wave-container">
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
+        <div className="wave-container">
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
         </div>
       </header>
 
@@ -470,6 +470,20 @@ const Home = () => {
             <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
             <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
             <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
+          </div>
+        </div>
+      </section>
+
+      <section className="start-learning">
+        <div className="container">
+          <div className="start-learning-layout">
+            <h1 className="start-learning-title">
+              Join more than <span>10 million learners</span> worldwide
+            </h1>
+
+            <a href="#" role='button' className="start-learning-btn">
+              start learning for free
+            </a>
           </div>
         </div>
       </section>
