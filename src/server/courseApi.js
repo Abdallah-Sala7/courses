@@ -8,8 +8,12 @@ export const courseApi = createApi({
   endpoints:(builder)=>({
     getCourseByCategory: builder.query({
       query:(category)=> category === 'all' ? '/courses' : `/courses?category=${category}`
+    }),
+
+    getCourseById: builder.query({
+      query:(id) => `/courses/${id}`
     })
   })
 })
 
-export const {useGetCourseByCategoryQuery} = courseApi
+export const {useGetCourseByCategoryQuery, useGetCourseByIdQuery} = courseApi

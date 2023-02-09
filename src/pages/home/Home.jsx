@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <>
-      <header>
+      <header className='home'>
         <div className="container">
           <div className="header-layout">
             <div className="header-details">
@@ -267,7 +267,7 @@ const Home = () => {
                 ) : isLoading ? (
                   <>Loading...</>
                 ) : data ? (
-                  data.map((item, i) => <CourseCard key={i} id={item.id} title={item.title} image={item.image} days={item.days} levels={item.levels} price={item.price} sales={item.sale} IName={item.instructor.name} IImg={item.instructor.image} />)
+                  data.map((item, i) => <CourseCard key={i} id={item.id} title={item.title} image={item.image} days={item.days} levels={item.levels} price={item.price} sales={item.sale} IName={item.instructor.name} IImg={item.instructor.avatae} />)
                 ) : null
               }
             </div>

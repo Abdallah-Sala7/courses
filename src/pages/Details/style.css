@@ -1,0 +1,149 @@
+.details-header{
+  padding: 80px 0;
+  background-color: var(--light-blue);
+}
+
+.details-header .details-header-info{
+  width: 70%;
+}
+
+.details-header .details-header-info .header-category{
+  display: inline-block;
+  background-color: var(--third-color);
+  color: var(--white-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 5px 15px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+}
+
+.details-header .details-header-info .details-title{
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.details-header .details-header-info .course-desc{
+  color: var(--dark-gray);
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.details-header .details-header-info .course-details-info{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.details-header .details-header-info .course-details-info .details-info-box{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.details-header .details-header-info .course-details-info .details-info-box img{
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: invert(0.3);
+}
+
+.details-header .details-header-info .course-details-info .details-info-box .info-box-text{
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+}
+
+.details-header .details-header-info .course-details-info .details-info-box .rate-num{
+  color: goldenrod;
+  font-weight: 700;
+  font-family: cursive;
+}
+
+.details-header-info .instructor{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.details-header-info .instructor .instructor-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.details-header-info .instructor .instructor-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.details-header-info .instructor .instructor-name{
+  color: var(--dark-color);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* overview */
+
+.overview .overview-box{
+  margin-bottom: 30px;
+}
+
+.overview .overview-box .overview-title{
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.overview .overview-box .overview-desc{
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  line-height: 1.7;
+  font-weight: 300;
+  padding-left: 10px;
+}
+
+.overview .overview-box .overview-list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-left: 10px;
+}
+
+.overview .overview-box .overview-list .overview-item{
+  min-width: calc(50% - 30px);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.overview .overview-box .overview-list .overview-item .overview-item-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--light-gray);
+  border-radius: 50%;
+}
+
+.overview .overview-box .overview-list .overview-item .overview-item-icon img{
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+  filter: invert(0.7);
+}
+
+.overview .overview-box .overview-list .overview-item .overview-item-text{
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  line-height: 1.7;
+  font-weight: 300;
+}
