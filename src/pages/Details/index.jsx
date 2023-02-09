@@ -164,7 +164,7 @@ const Details = () => {
                 </div>
 
                 <div className="overview-instructor-info">
-                  <h5 className='instructor-name'>{data.instructor.name}</h5>
+                  <a href='#' className='instructor-name'>{data.instructor.name}</a>
 
                   <p className="instructor-jop">{data.instructor.jop}</p>
                 </div>
