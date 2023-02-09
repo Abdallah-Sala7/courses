@@ -1,13 +1,18 @@
 import {useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCategoryValue } from '../../store/reducers/appSlice';
 
 import './style.css'
 
 
 const NavTap = () => {  
-  const [navTap, setNavTap] = useState('all')
+  const navTap = useSelector((state) => state.app.category)
+
+  const dispatch = useDispatch()
+  
 
   const handelNavTap = (e, tap) => {
-    setNavTap(tap);
+    dispatch(setCategoryValue(tap))
     e.preventDefault();
   }
 
@@ -21,16 +26,16 @@ const NavTap = () => {
         it & software
       </a>
 
-      <a href="#" onClick={(e)=> handelNavTap(e, 'graphic')} className={`popular-tap ${navTap === 'graphic' && 'active'}`} >
+      <a href="#" onClick={(e)=> handelNavTap(e, 'design')} className={`popular-tap ${navTap === 'design' && 'active'}`} >
         design
       </a>
 
-      <a href="#" onClick={(e)=> handelNavTap(e, 'marketing')} className={`popular-tap ${navTap === 'marketing' && 'active'}`} >
+      <a href="#" onClick={(e)=> handelNavTap(e, 'development')} className={`popular-tap ${navTap === 'development' && 'active'}`} >
         development
       </a>
 
-      <a href="#" onClick={(e)=> handelNavTap(e, 'web')} className={`popular-tap ${navTap === 'web' && 'active'}`} >
-        marketing
+      <a href="#" onClick={(e)=> handelNavTap(e, 'business')} className={`popular-tap ${navTap === 'business' && 'active'}`} >
+        business
       </a>
     </div>
   )

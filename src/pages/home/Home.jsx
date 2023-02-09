@@ -15,13 +15,18 @@ import LearnCard from '../../components/LearnCard';
 import CategorieBox from '../../components/CategorieBox'
 import NavTap from '../../components/NavTap';
 import InstructorCard from '../../components/InstructorCard';
+import { useGetCourseByCategoryQuery } from '../../server/courseApi';
+import { useSelector } from 'react-redux';
 
 
 const Home = () => {
-
+  const {category} = useSelector(state => state.app)
+  
   useEffect(() => {
     Aos.init({ duration: 2000 });
-  }, [])
+  }, [])  
+
+  const {data, error, isLoading} = useGetCourseByCategoryQuery(category);
 
   return (
     <>
@@ -256,10 +261,15 @@ const Home = () => {
           <div className="popular-layout">
             <NavTap />
             <div className="popular-contint">
-              <CourseCard />
-              <CourseCard />
-              <CourseCard />
-              <CourseCard />
+              {
+                error ? (
+                  <>Oh no, there was an error</>
+                ) : isLoading ? (
+                  <>Loading...</>
+                ) : data ? (
+                  data.map((item, i) => <CourseCard key={i} id={item.id} title={item.title} image={item.image} days={item.days} levels={item.levels} price={item.price} sales={item.sale} IName={item.instructor.name} IImg={item.instructor.image} />)
+                ) : null
+              }
             </div>
           </div>
         </div>
