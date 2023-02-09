@@ -1,9 +1,13 @@
 import { Rating } from '@mui/material'
 import { Link, useParams } from 'react-router-dom'
-import { check, clock, reading} from '../../assets/images'
-import { useGetCourseByIdQuery } from '../../server/courseApi'
 
 import './style.css'
+
+import { chatbubble, check, clock, play, reading, star} from '../../assets/images'
+import { useGetCourseByIdQuery } from '../../server/courseApi'
+import ReviewCard from '../../components/ReviewCard'
+import ReviewForm from '../../components/ReviewForm'
+
 
 const Details = () => {
   const param = useParams()
@@ -21,13 +25,11 @@ const Details = () => {
       <div className="container">
         <div className="details-header-info">
           <Link to={`/${data.category}`} className="header-category">
-            { isLoading ? '' : data.category}
+            {data.category}
           </Link>
           
           <h1 className="details-title">
-            {
-              data.title
-            }
+            {data.title}
           </h1>
 
           <p className="course-desc">
@@ -164,10 +166,82 @@ const Details = () => {
                 </div>
 
                 <div className="overview-instructor-info">
-                  <a href='#' className='instructor-name'>{data.instructor.name}</a>
+                  <Link to={`${data.instructor.name}`} className='instructor-name'>{data.instructor.name}</Link>
 
                   <p className="instructor-jop">{data.instructor.jop}</p>
+
+                  <div className="course-details-info">
+                    <div className="details-info-box">
+                      <img 
+                        src={star} 
+                        alt='star icon'
+                        loading='lazy'
+                        className='star'
+                      />
+
+                      <p className="info-box-text">
+                        {data.instructor.rate}
+                      </p>
+                    </div>
+
+                    <div className="details-info-box">
+                      <img 
+                        src={chatbubble} 
+                        alt='student icon'
+                        loading='lazy'
+                      />
+
+                      <p className="info-box-text">
+                        {data.instructor.student} Reviews
+                      </p>
+                    </div>
+
+                    <div className="details-info-box">
+                      <img 
+                        src={reading} 
+                        alt='student icon'
+                        loading='lazy'
+                      />
+
+                      <p className="info-box-text">
+                        {data.instructor.student} Student
+                      </p>
+                    </div>
+
+                    <div className="details-info-box">
+                      <img 
+                        src={play} 
+                        alt='student icon'
+                        loading='lazy'
+                      />
+
+                      <p className="info-box-text">
+                        {data.instructor.courses} courses
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="overview-box">
+              <h5 className="overview-title">
+                reviews (2)
+              </h5>
+              
+              <div className="review-layout">
+                <ReviewCard />
+                <ReviewCard />
+              </div>
+            </div>
+
+            <div className="overview-box">
+              <h6 className="overview-title">
+                add reviews
+              </h6>
+              
+              <div className="review-form">
+                <ReviewForm />
               </div>
             </div>
           </div>

@@ -55,6 +55,17 @@ a{
   color: inherit;
 }
 
+input,
+input:is(:focus, :active),
+textarea, textarea:is(:focus, :active){
+  outline: none;
+}
+
+::placeholder{
+  color: var(--dark-gray);
+  font-weight: 300;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 1em;

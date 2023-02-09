@@ -21,6 +21,7 @@ export {default as check} from './icons/check.png'
 export {default as play} from './icons/play.png'
 export {default as star} from './icons/star.png'
 export {default as reading} from './icons/reading.png'
+export {default as chatbubble} from './icons/chatbubble.svg'
 
 
 export {default as learning} from './icons/online-learning.png'

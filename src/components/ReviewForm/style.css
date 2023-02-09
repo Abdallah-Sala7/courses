@@ -1,0 +1,65 @@
+form{
+  width: 100%;
+}
+
+form .form-action{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+form .form-action .form-groub{
+  width: 100%;
+}
+
+form .form-action .form-groub input{
+  height: 40px;
+}
+
+form .form-action .form-groub input,
+form .form-action .text-area textarea{
+  width: 100%;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+form .form-action .text-area{
+  width: 100%;
+}
+
+form .form-action .text-area textarea{
+  resize: none;
+}
+
+form .form-action .form-btn,
+.review-rating{
+  display: flex;
+}
+
+form .form-action .form-btn a{
+  font-weight: 300;
+  padding: 15px 30px;
+  border-radius: 7px;
+  text-transform: capitalize;
+  background-color: var(--third-color);
+  color: var(--white-color);
+}
+
+.review-rating .rate-text{
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--dark-gray);
+  margin-right: 10px;
+}
+
+
+
+
+@media (min-width: 768px){
+  form .form-action .form-groub{
+    width: 45%;
+  }
+}
