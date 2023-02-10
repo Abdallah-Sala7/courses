@@ -12,8 +12,12 @@ export const courseApi = createApi({
 
     getCourseById: builder.query({
       query:(id) => `/courses/${id}`
+    }),
+
+    getInstructorByName: builder.query({
+      query:(name)=> name === 'all' ? '/courses' : `/courses?instructor?name=${name}`
     })
   })
 })
 
-export const {useGetCourseByCategoryQuery, useGetCourseByIdQuery} = courseApi
+export const {useGetCourseByCategoryQuery, useGetCourseByIdQuery, useGetInstructorByNameQuery} = courseApi

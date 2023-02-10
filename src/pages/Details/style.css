@@ -92,6 +92,10 @@
 }
 
 /* overview */
+.overview .overview-layout{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .overview .overview-box{
   padding:30px 0;
@@ -196,6 +200,11 @@
   color: var(--dark-gray);
 }
 
+/* overview-right */
+
+.overview .overview-layout .overview-right{
+  width: 100%;
+}
 
 
 
@@ -204,9 +213,18 @@
   .details-header .details-header-info,
   .overview-left{
     width: 70%;
+    padding-right: 25px;
   }
 
   .details-header .details-header-info .details-title{
     font-size: 2rem;
+  }
+
+  .overview .overview-layout .overview-right{
+    position: sticky;
+    top: 10px;
+    width: 30%;
+    height: fit-content;
+    margin-top: -205px;
   }
 }

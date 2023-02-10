@@ -22,11 +22,15 @@ export {default as play} from './icons/play.png'
 export {default as star} from './icons/star.png'
 export {default as reading} from './icons/reading.png'
 export {default as chatbubble} from './icons/chatbubble.svg'
-
-
 export {default as learning} from './icons/online-learning.png'
 export {default as education} from './icons/education.png'
 export {default as working} from './icons/worker.png'
+export {default as quizzeIcon} from './icons/quizze.png'
+export {default as languageIcon} from './icons/language.png'
+export {default as certificateIcon} from './icons/certificate.png'
+export {default as heartIcon} from './icons/heart.png'
+export {default as shareIcon} from './icons/share.png'
+export {default as enrollIcon} from './icons/enroll.png'
 
 // export home imgs
 export {default as homeImgOne} from './home/about.png'

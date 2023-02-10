@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
+import { Rating } from '@mui/material'
+
 import './style.css'
 
 import {document, clock, barChart} from '../../assets/images'
-import { Link } from 'react-router-dom'
 
-const CourseCard = ({id, title, image, price, sales, days, levels, IImg, IName}) => {
+const CourseCard = ({id, title, image, price, sales, days, levels, IImg, IName, rate}) => {
   return (
     <div className='course-card' data-aos="fade-up">
       {
@@ -19,7 +21,15 @@ const CourseCard = ({id, title, image, price, sales, days, levels, IImg, IName})
       </div>
 
       <div className='course-card-body'>
-        <div className="course-rate"></div>
+        <div className="course-rate">
+          <Rating 
+            name='coursRate'
+            value={rate}
+            precision={0.5}
+            readOnly
+            size='small'
+          /> 
+        </div>
 
         <h2 className='course-title'>
           <Link to={`details/${id}`} >

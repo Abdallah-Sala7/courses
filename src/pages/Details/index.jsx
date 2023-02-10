@@ -7,6 +7,7 @@ import { chatbubble, check, clock, play, reading, star} from '../../assets/image
 import { useGetCourseByIdQuery } from '../../server/courseApi'
 import ReviewCard from '../../components/ReviewCard'
 import ReviewForm from '../../components/ReviewForm'
+import CourseWidget from '../../components/CourseWidget'
 
 
 const Details = () => {
@@ -244,6 +245,10 @@ const Details = () => {
                 <ReviewForm />
               </div>
             </div>
+          </div>
+
+          <div className="overview-right">
+            <CourseWidget days={data.days} level={data.levels} student={data.totalStudent} sale={data.sale} price={data.price} />
           </div>
         </div>
       </div>
