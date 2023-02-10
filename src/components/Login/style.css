@@ -1,0 +1,79 @@
+.auth-form{
+  padding: 20px;
+  border: 1px solid #EDEDED;
+  border-radius: 10px;
+}
+
+.auth-form .auth-title{
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: var(--dark-color);
+  text-transform: capitalize;
+}
+
+.auth-form .form-group{
+  margin-bottom: 20px;
+}
+
+.auth-form .form-group :is(.form-control,.css-1d3z3hw-MuiOutlinedInput-notchedOutline){
+  width: 100%;
+  border-radius: 7px;
+  padding:17px 14px;
+  border: 1px solid #EDEDED;
+}
+
+.auth-form .form-group .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline{
+  border: 1px solid #EDEDED;
+}
+
+.auth-form .form-group :is(.form-control:focus ,.Mui-focused .css-1d3z3hw-MuiOutlinedInput-notchedOutline){
+  border: 1px solid var(--third-color);
+}
+
+.auth-form .form-group input::placeholder{
+  font-family: 'FiraSans';
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.auth-form .css-r47a1p-MuiFormControl-root{
+  width: 100%;
+  margin: 0;
+}
+
+.css-dmmspl-MuiFormGroup-root{
+  width: fit-content;
+}
+
+.css-ahj2mt-MuiTypography-root{
+  color: var(--dark-gray);
+}
+
+.auth-form .form-group a{
+  display: inline-block;
+  width: 100%;
+  padding: 17px 0;
+  font-weight: 500;
+  border-radius: 8px;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--white-color);
+  border: 2px solid var(--third-color);
+  background-color: var(--third-color);
+  transition: all 0.3s ease;
+}
+
+.auth-form .form-group a:hover{
+  background-color: transparent;
+  color: var(--third-color);
+}
+
+
+/* ***********media************ */
+@media (min-width: 768px){
+  .auth-form{
+    width: 600px;
+    padding: 40px;
+  }
+}

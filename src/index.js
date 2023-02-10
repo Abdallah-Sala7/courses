@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import Details from './pages/Details';
 import Category from './pages/Category';
+import AuthPage from './pages/AuthPage';
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {path:'details/:id', element:<Details />},
       {path:':category', element:<Category />}
     ]
+  },
+  {
+    path:'auth', 
+    element: <AuthPage />
   }
 ])
 

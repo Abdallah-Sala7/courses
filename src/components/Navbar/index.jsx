@@ -36,7 +36,7 @@ const Navbar = () => {
                   loading='lazy'
                 />
               </Link> :
-              <Link to={'/'} className="login">
+              <Link to={'/auth'} className="login">
                 log in
               </Link>
               }
@@ -90,6 +90,7 @@ const Navbar = () => {
                     />
                   </a>
                 </li>
+
                 <li>
                   <a href="#">
                     <img
@@ -99,6 +100,7 @@ const Navbar = () => {
                     />
                   </a>
                 </li>
+
                 <li>  
                   <a href="#">
                     <img
@@ -130,7 +132,7 @@ const Navbar = () => {
               <span className='count'>1</span>
             </Link>
 
-            <Link to={'/'} className="login">
+            <Link to={'/auth'} className="login">
               log in
             </Link>
           </div>
