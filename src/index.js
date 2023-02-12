@@ -1,12 +1,11 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import {Home, RootLayout} from './pages';
-import './main.css'
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import Details from './pages/Details';
-import Category from './pages/Category';
-import AuthPage from './pages/AuthPage';
+
+import './main.css'
+
+import {Home, RootLayout, Details, Category, AuthPage, ContactUs} from './pages';
 
 
 const router = createBrowserRouter([
@@ -16,8 +15,9 @@ const router = createBrowserRouter([
     children:[
       {index:true, element:<Home /> },
       {path:'home', element:<Home />},
+      {path:'contact', element:<ContactUs />},
       {path:'details/:id', element:<Details />},
-      {path:':category', element:<Category />}
+      {path:':category', element:<Category />},
     ]
   },
   {

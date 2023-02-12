@@ -2,7 +2,7 @@ form{
   width: 100%;
 }
 
-form .form-action{
+form .form-group{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,36 +10,32 @@ form .form-action{
   flex-wrap: wrap;
 }
 
-form .form-action .form-groub{
+form .form-group .form-action{
   width: 100%;
 }
 
-form .form-action .form-groub input{
-  height: 40px;
+form .form-group .form-action label{
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
-form .form-action .form-groub input,
-form .form-action .text-area textarea{
+form .form-group .form-action :is(input, textarea){
   width: 100%;
   border: 1px solid var(--light-gray);
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px 10px;
 }
 
-form .form-action .text-area{
-  width: 100%;
-}
-
-form .form-action .text-area textarea{
+form .form-group .form-action textarea{
   resize: none;
 }
 
-form .form-action .form-btn,
+form .form-group .form-btn,
 .review-rating{
   display: flex;
 }
 
-form .form-action .form-btn a{
+form .form-group .form-btn a{
   font-weight: 300;
   padding: 15px 30px;
   border-radius: 7px;
@@ -56,10 +52,8 @@ form .form-action .form-btn a{
 }
 
 
-
-
 @media (min-width: 768px){
-  form .form-action .form-groub{
+  form .form-group .form-action:not(:has(textarea)) {
     width: 45%;
   }
 }

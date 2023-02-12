@@ -1,0 +1,115 @@
+header.contact-us{
+  padding: 120px 0;
+  background-color: #FEFBF4;
+}
+
+.contact-us .contact-info{
+  width: 400px;
+}
+
+.contact-us .contact-info :is(.section-title, .section-info){
+  text-align: left;
+}
+
+.contact-us .contact-info .section-info{
+  margin-bottom: 0px;
+  color: var(--primary-color);
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+/************section-title*********************/
+
+.our-offices .section-title{
+  text-align: left;
+}
+
+.office-layout,
+.office-layout .office-left{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.office-layout > div{
+  width: 100%;
+}
+
+.office-layout .office-left .office-info-box{
+  width: calc(50% - 15px);
+  display: flex;
+  flex-direction: column;
+}
+
+.office-layout .office-left .office-info-box .office-info-title{
+  font-size: 1.2em;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.office-layout .office-left .office-info-box .office-info-desc{
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--dark-gray);
+}
+
+.office-layout .office-left .office-info-box .office-info-link{
+  font-weight: 300;
+  width: fit-content;
+  transition: 0.3s linear color;
+}
+
+.office-layout .office-left .office-info-box .office-info-link:hover{
+  color: var(--secondary-color);
+}
+
+.office-layout .office-left .office-info-box .office-info-link:not(:last-child){
+  margin-bottom: 10px;
+}
+
+/* form */
+
+.office-layout .contact-form{
+  position: sticky;
+  top: 10px;
+  height: fit-content;
+  background-color: var(--white-color);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 7px rgb(36 36 36 / 7%)
+}
+
+.office-layout .contact-form .contact-form-title{
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+.office-layout .contact-form .contact-form-desc{
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0 85px 30px 0;
+}
+
+.office-layout .contact-form form .form-group .form-action{
+  width: 100%;
+}
+
+.office-layout .contact-form form{
+  padding-right: 10px;
+}
+
+@media (min-width: 992px){
+  .office-layout > div{
+    flex: 1;
+  }
+
+  .office-layout .contact-form{
+    margin-top: -350px;
+  }
+}

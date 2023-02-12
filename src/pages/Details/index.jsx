@@ -4,9 +4,10 @@ import { Link, useParams } from 'react-router-dom'
 import './style.css'
 
 import { chatbubble, check, clock, play, reading, star} from '../../assets/images'
+
 import { useGetCourseByIdQuery } from '../../server/courseApi'
 import ReviewCard from '../../components/ReviewCard'
-import ReviewForm from '../../components/ReviewForm'
+import CustomForm from '../../components/CustomForm'
 import CourseWidget from '../../components/CourseWidget'
 
 
@@ -242,7 +243,7 @@ const Details = () => {
               </h6>
               
               <div className="review-form">
-                <ReviewForm />
+                <CustomForm isLabel={false} isRate={true} action='review' />
               </div>
             </div>
           </div>

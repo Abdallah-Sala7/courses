@@ -15,18 +15,18 @@ const AuthPage = () => {
     <section className='auth'>
       <div className="container">
         <div className="auth-btns">
-          <a href="#" onClick={(e) => handleAuthContint(e, 'login')} className={authContint == 'login' && 'active'}>
+          <a href="#" onClick={(e) => handleAuthContint(e, 'login')} className={`login-btn ${authContint == 'login' && 'active'}`}>
             login
           </a>
 
-          <a href="#" onClick={(e) => handleAuthContint(e, 'register')} className={authContint == 'register' && 'active'}>
+          <a href="#" onClick={(e) => handleAuthContint(e, 'register')} className={`login-btn ${authContint == 'register' && 'active'}`}>
             register
           </a>
         </div>
 
         <div className="auth-layout">
           {
-            authContint == 'register' ? <Register /> : <Login />
+            authContint === 'register' ? <Register /> : <Login />
           }
         </div>
       </div>
