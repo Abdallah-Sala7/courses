@@ -5,10 +5,10 @@ const CustomForm = ({isRate, isLabel, action}) => {
   return (
     <form action="">
       <div className="form-group">
-        <div class="form-action">
-          {isLabel && <label htmlFor="inputName" class="form-label">Name</label>}
+        <div className="form-action">
+          {isLabel && <label htmlFor="inputName" className="form-label">Name</label>}
 
-          <div class="form-control">
+          <div className="form-control">
             <input 
               type="text"  
               name="inputName" 
@@ -18,10 +18,10 @@ const CustomForm = ({isRate, isLabel, action}) => {
           </div>
         </div>
 
-        <div class="form-action">
-          {isLabel && <label htmlFor="inputName" class="form-label">Email</label>}
+        <div className="form-action">
+          {isLabel && <label htmlFor="inputName" className="form-label">Email</label>}
 
-          <div class="form-control" >
+          <div className="form-control" >
             <input 
               type="email" 
               name="inputName" 
@@ -42,10 +42,10 @@ const CustomForm = ({isRate, isLabel, action}) => {
           />
         </div>)}
 
-        <div class="form-action">
-          {isLabel && <label htmlFor="inputName" class="form-label">Message</label>}
+        <div className="form-action">
+          {isLabel && <label htmlFor="inputName" className="form-label">Message</label>}
 
-          <div class="form-control" >
+          <div className="form-control" >
             <textarea 
               name="messagetName" 
               id="messagetName" 

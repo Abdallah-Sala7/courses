@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import './style.css'
 
 import {facebookLogo, twitterLog, instagramLogo, searchIcon, shoppingIcon, menuIcon, closeIcon, logoWhite} from '../../assets/images'
@@ -52,13 +52,15 @@ const Navbar = () => {
 
             <ul className={'nav-links'}>
               <li>
-                <Link to={"/"}>Home</Link>
+                <NavLink to={"/"}>Home</NavLink>
               </li>
+
               <li>
-                <Link to={"/about"}>About</Link>
+                <NavLink to={"/about"}>About</NavLink>
               </li>
+              
               <li>
-                <Link to={"/contact"}>Contact</Link>
+                <NavLink to={"/contact"}>Contact</NavLink>
               </li>
             </ul>      
 

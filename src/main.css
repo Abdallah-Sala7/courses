@@ -11,7 +11,7 @@
   --third-color: #6440FB;
   --light-blue: #F5F7FE;
   --white-color: #fff;
-  --dark-color: #121212;
+  --dark-color: #1e1e1ed8;
   --light-gray: #6440fb12;
   --dark-gray: #858585;
 
@@ -46,6 +46,11 @@
   font-weight: 700;
 }
 
+html{
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
 ul{
   list-style: none;
 }
@@ -64,6 +69,10 @@ textarea, textarea:is(:focus, :active){
 ::placeholder{
   color: var(--dark-gray);
   font-weight: 300;
+}
+
+::-webkit-scrollbar{
+  display: none;
 }
 
 .container {

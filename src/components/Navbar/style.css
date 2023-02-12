@@ -140,7 +140,7 @@
   transition: all 0.3s ease;
 }
 
-.nav-layout .nav-links li a:hover{
+.nav-layout .nav-links li a:is(:hover, .active) {
   background-color: var(--light-gray);
   color: var(--third-color);
 }
@@ -255,7 +255,7 @@
     color: var(--white-color);
     width: auto;
   }
-  .nav-layout .nav-links li a:hover{
+  .nav-layout .nav-links li a:is(:hover, .active){
     background-color: rgba(255, 255, 255, 0.15);
     color: var(--secondary-color);
   }

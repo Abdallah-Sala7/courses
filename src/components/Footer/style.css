@@ -146,6 +146,7 @@ footer .footer-bottom{
 
 footer .footer-bottom .footer-bottom-text{
   font-weight: 300;
+  text-align: center;
   color: var(--white-color);
 }
 
@@ -163,6 +164,10 @@ footer .footer-bottom .footer-bottom-links{
   align-items: center;
   color: var(--white-color);
   gap: 10px;
+}
+
+footer .footer-bottom .footer-bottom-links a{
+  font-weight: 300;
 }
 
 

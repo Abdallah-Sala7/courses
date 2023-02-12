@@ -1,6 +1,7 @@
 import './style.css'
 
 import CustomForm from '../../components/CustomForm'
+import FaqAccordion from '../../components/FaqAccordion'
 
 const ContactUs = () => {
   return (
@@ -83,6 +84,22 @@ const ContactUs = () => {
 
             <CustomForm isLabel={true} isRate={false} action='massege' />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="faq">
+      <div className="container">
+        <h1 className="section-title">
+          Frequently Asked Questions
+        </h1>
+
+        <p className="section-info">
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        </p>
+
+        <div className="faq-accordion">
+          <FaqAccordion />
         </div>
       </div>
     </section>
