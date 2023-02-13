@@ -1,21 +1,12 @@
 import './style.css'
 
-import { useState } from 'react';
+import PassInputMui from '../PassInputMui';
 
-import { FormControl, OutlinedInput , IconButton, InputAdornment} from '@mui/material'
-import {Visibility, VisibilityOff} from '@mui/icons-material';
-
-const Register = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const handleClickShowPassword = (e) => {
-    setShowPassword((show) => !show);
-    e.preventDefult();
-  }
-  
+const Register = () => {  
   return (
     <div className="auth-form">
       <h1 className="auth-title">
-        login
+        register
       </h1>
 
       <form action=''>
@@ -36,45 +27,11 @@ const Register = () => {
         </div>
 
         <div className="form-group">
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-            <OutlinedInput
-              id="outlined-adornment-password"
-              type={showPassword ? 'text' : 'password'}
-              placeholder="password"
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={(e) => handleClickShowPassword(e)}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
-          </FormControl>
+          <PassInputMui action={'password'}/>
         </div>
 
         <div className="form-group">
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-            <OutlinedInput
-              id="outlined-adornment-password"
-              type={showPassword ? 'text' : 'password'}
-              placeholder="confirm password"
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={(e) => handleClickShowPassword(e)}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
-          </FormControl>
+          <PassInputMui action={'confirm password'}/>
         </div>
 
         <div className="form-group">
