@@ -1,14 +1,19 @@
-import { Rating } from '@mui/material'
-import { Link, useParams } from 'react-router-dom'
+import { Rating } from '@mui/material';
+import { Link, useParams } from 'react-router-dom';
 
-import './style.css'
+import './style.css';
 
-import { chatbubble, check, clock, play, reading, star} from '../../assets/images'
+import { useGetCourseByIdQuery } from '../../server/courseApi';
 
-import { useGetCourseByIdQuery } from '../../server/courseApi'
-import ReviewCard from '../../components/ReviewCard'
-import CustomForm from '../../components/CustomForm'
-import CourseWidget from '../../components/CourseWidget'
+import { 
+  chatbubble, check, clock, 
+  play, reading, star
+} from '../../assets/images';
+
+import {
+  ReviewCard, 
+  CustomForm, CourseWidget
+} from '../../components';
 
 
 const Details = () => {

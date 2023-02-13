@@ -1,7 +1,6 @@
 import './style.css'
 
-import CustomForm from '../../components/CustomForm'
-import FaqAccordion from '../../components/FaqAccordion'
+import {CustomForm, FaqAccordionMui} from '../../components'
 
 const ContactUs = () => {
   return (
@@ -99,7 +98,7 @@ const ContactUs = () => {
         </p>
 
         <div className="faq-accordion">
-          <FaqAccordion />
+          <FaqAccordionMui />
         </div>
       </div>
     </section>

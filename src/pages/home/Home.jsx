@@ -4,21 +4,28 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper';
 import Aos from 'aos';
 
-import './home.css'
+import './home.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'aos/dist/aos.css';
 
-import {studentIcon, coursesIcon, learnIcon, homeImgOne, homeImgTow, homeImgThree, brandOne, brandTow, brandThree, brandFour,brandFive, brandSix, categorie1, categorie2, categorie3, categorie4, categorie5, categorie6, check, learning, working, education, instructorImg} from '../../assets/images'
-import CourseCard from '../../components/CourseCard';
-import TestimonialCard from '../../components/TestimonialCard';
-import LearnCard from '../../components/LearnCard';
-import CategorieBox from '../../components/CategorieBox'
-import NavTap from '../../components/NavTap';
-import InstructorCard from '../../components/InstructorCard';
-
 import { useGetCourseByCategoryQuery} from '../../server/courseApi';
-import axios from 'axios';
+
+import {
+  studentIcon, coursesIcon, 
+  learnIcon, homeImgOne, homeImgTow,
+  homeImgThree, brandOne, brandTow, 
+  brandThree, brandFour,brandFive, brandSix, 
+  categorie1, categorie2, categorie3, categorie4, 
+  categorie5, categorie6, check, learning, working, 
+  education, instructorImg
+} from '../../assets/images';
+
+import {
+  CourseCard, 
+  TestimonialCard, LearnCard, 
+  CategorieBox, NavTap, InstructorCard
+} from '../../components';
 
 
 const Home = () => {

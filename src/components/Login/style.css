@@ -17,7 +17,7 @@
   margin-bottom: 20px;
 }
 
-.auth-form .form-group :is(.form-control,.css-1d3z3hw-MuiOutlinedInput-notchedOutline){
+.auth-form .form-group .form-control{
   width: 100%;
   font-size: 1rem;
   font-weight: 300;
@@ -26,31 +26,14 @@
   border: 1px solid #EDEDED;
 }
 
-.auth-form .form-group .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline{
-  border-color: #EDEDED;
-}
-
-.auth-form .form-group :is(.form-control:focus ,.Mui-focused .css-1d3z3hw-MuiOutlinedInput-notchedOutline, .Mui-focused .css-1d3z3hw-MuiOutlinedInput-notchedOutline:hover){
-  border: 1px solid var(--third-color);
+.auth-form .form-group .form-control:focus{
+  border-color: var(--third-color);
 }
 
 .auth-form .form-group input::placeholder{
   font-family: 'FiraSans';
   font-size: 0.9rem;
   font-weight: 300;
-}
-
-.auth-form .css-r47a1p-MuiFormControl-root{
-  width: 100%;
-  margin: 0;
-}
-
-.css-dmmspl-MuiFormGroup-root{
-  width: fit-content;
-}
-
-.css-ahj2mt-MuiTypography-root{
-  color: var(--dark-gray);
 }
 
 .auth-form .form-group a{
