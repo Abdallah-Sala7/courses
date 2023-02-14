@@ -1,10 +1,19 @@
 import { useState } from 'react'
-import { useGetCourseQuery } from '../../server/courseApi'
+import { useDispatch } from 'react-redux';
 
-import './style.css'
+import './style.css';
+
+import { useGetCourseQuery } from '../../server/courseApi';
+import { 
+  setInstructorValue, setLevelsValue, 
+  setRatingValue, setCategoryValue,
+  setSearch
+} from '../../store/reducers/filterSlice';
+import { searchIcon } from '../../assets/images';
+import { Rating } from '@mui/material';
 
 const CourseFilter = () => {
-  const { data, loading, error } = useGetCourseQuery();  
+  const { data, isLoading, isError } = useGetCourseQuery();  
 
   const [courseFilterFild] = useState({
     category:[],
@@ -13,12 +22,7 @@ const CourseFilter = () => {
     rating:[1, 2, 3, 4, 5]
   });
 
-  const [courseFilterValue] = useState({
-    category:[],
-    instructor:[],
-    levels:[],
-    rating:5
-  });
+  const dispatch = useDispatch()
   
   data?.map((item) =>(
     !courseFilterFild.category.includes(item.category) && courseFilterFild.category.push(item.category),
@@ -26,123 +30,122 @@ const CourseFilter = () => {
     !courseFilterFild.levels.includes(item.levels) && courseFilterFild.levels.push(item.levels)
   ))
 
-  const handleCategory = (val) =>{
-    if(courseFilterValue.category.includes(val)){
-      let valIndex = courseFilterValue.category.indexOf(val);
-      courseFilterValue.category.splice(valIndex,1)
-    }else{
-      courseFilterValue.category.push(val)
-    }
-    {console.log(courseFilterValue)}
-  }
+  if (isError) return 'Something went wrong ...'
+  
+  if (isLoading) return 'Loading ......' 
+  
+  if (data) {
+    
+  return (
+    <div className='filter'>
+      <div className="filter-box">
+        <div className="form-group">
+          <input 
+            type="text" 
+            placeholder='search courses'
+            onChange={(e) => dispatch(setSearch(e.target.value))}
+          />
 
-  const handleInstructor = (val) =>{
-    if(courseFilterValue.instructor.includes(val)){
-      let valIndex = courseFilterValue.instructor.indexOf(val);
-      courseFilterValue.instructor.splice(valIndex,1)
-    }else{
-      courseFilterValue.instructor.push(val)
-    }
-  }
+          <img 
+            src={searchIcon} 
+            alt="search icon" 
+            loading='lazy'
+          />
+        </div>
+      </div>
 
-  const handleLevels = (val) =>{
-    if(courseFilterValue.levels.includes(val)){
-      let valIndex = courseFilterValue.levels.indexOf(val);
-      courseFilterValue.levels.splice(valIndex,1)
-    }else{
-      courseFilterValue.levels.push(val)
-    }
-  }
+      <div className="filter-box">
+        <h3 className="filter-box-title">
+          Categories
+        </h3>
 
-  const handleRating = (val) =>{
-    courseFilterValue.rating = val
-  }
+        <ul className="filter-box-list">
+          {courseFilterFild.category.map((item, i) =>(
+            <li key={i}  className='filter-box-item'> 
+              <input 
+                type="checkbox" 
+                name={item} 
+                id={item} 
+                onChange={() => dispatch(setCategoryValue(item))} 
+              />
 
-  return (<>
-    <div className="filter-box">
-      <h1 className="filter-box-title">
-        Categories
-      </h1>
+              <label htmlFor={item}>{item}</label>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-      <ul className="filter-box-list" >
-        {courseFilterFild.category.map((item, i) =>(
-          <li key={i}  className='filter-box-item'> 
-            <input 
-              type="checkbox" 
-              name={item} 
-              id={item} 
-              onChange={() => handleCategory(item)} 
-            />
+      <div className="filter-box">
+        <h3 className="filter-box-title">
+          instructor
+        </h3>
 
-            <label htmlFor={item}>{item}</label>
-          </li>
-        ))}
-      </ul>
+        <ul className="filter-box-list" >
+          {courseFilterFild.instructor.map((item, i) =>(
+            <li key={i}  className='filter-box-item'> 
+              <input 
+                type="checkbox" 
+                name={item} 
+                id={item} 
+                onChange={() => dispatch(setInstructorValue(item))} 
+              />
+
+              <label htmlFor={item}>{item}</label>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="filter-box">
+        <h3 className="filter-box-title">
+          levels
+        </h3>
+
+        <ul className="filter-box-list" >
+          {courseFilterFild.levels.map((item, i) =>(
+            <li key={i}  className='filter-box-item'> 
+              <input 
+                type="checkbox" 
+                name={item} 
+                id={item} 
+                onChange={() => dispatch(setLevelsValue(item))} 
+              />
+
+              <label htmlFor={item}>{item}</label>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="filter-box">
+        <h3 className="filter-box-title">
+          rating
+        </h3>
+
+        <ul className="filter-box-list" >
+          {courseFilterFild.rating.map((item, i) =>(
+            <li key={i}  className='filter-box-item'> 
+              <input 
+                type={"radio"}
+                name={"radio-fil"} 
+                id={item} 
+                onChange={() => dispatch(setRatingValue(item))} 
+              />
+
+              <label htmlFor={item}> 
+                <Rating 
+                  name='coursRate'
+                  value={item}
+                  readOnly
+                  size='small'
+                /> 
+              </label>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-
-    <div className="filter-box">
-      <h1 className="filter-box-title">
-        instructor
-      </h1>
-
-      <ul className="filter-box-list" >
-        {courseFilterFild.instructor.map((item, i) =>(
-          <li key={i}  className='filter-box-item'> 
-            <input 
-              type="checkbox" 
-              name={item} 
-              id={item} 
-              onChange={() => handleInstructor(item)} 
-            />
-
-            <label htmlFor={item}>{item}</label>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div className="filter-box">
-      <h1 className="filter-box-title">
-        levels
-      </h1>
-
-      <ul className="filter-box-list" >
-        {courseFilterFild.levels.map((item, i) =>(
-          <li key={i}  className='filter-box-item'> 
-            <input 
-              type="checkbox" 
-              name={item} 
-              id={item} 
-              onChange={() => handleLevels(item)} 
-            />
-
-            <label htmlFor={item}>{item}</label>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div className="filter-box">
-      <h1 className="filter-box-title">
-        rating
-      </h1>
-
-      <ul className="filter-box-list" >
-        {courseFilterFild.rating.map((item, i) =>(
-          <li key={i}  className='filter-box-item'> 
-            <input 
-              type={"radio"}
-              name={"radio-fil"} 
-              id={item} 
-              onChange={() => handleRating(item)} 
-            />
-
-            <label htmlFor={item}>{item}</label>
-          </li>
-        ))}
-      </ul>
-    </div>
-</>)
+  )}
 }
 
 export default CourseFilter

@@ -7,12 +7,12 @@ import {document, clock, barChart} from '../../assets/images'
 
 const CourseCard = ({id, title, image, price, sales, days, levels, IImg, IName, rate}) => {
   return (
-    <div className='course-card' data-aos="fade-up">
+    <div className='course-card'>
       {
         sales && <p className="sales">sale</p>
       }
       <div className='course-card-img'>
-        <Link to={`details/${id}`} className="overlay"></Link>
+        <Link to={`/details/${id}`} className="overlay"></Link>
         <img
           src={image}
           alt={title}

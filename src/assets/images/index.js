@@ -31,6 +31,8 @@ export {default as certificateIcon} from './icons/certificate.png'
 export {default as heartIcon} from './icons/heart.png'
 export {default as shareIcon} from './icons/share.png'
 export {default as enrollIcon} from './icons/enroll.png'
+export {default as listIcon} from './icons/list.png'
+
 
 // export home imgs
 export {default as homeImgOne} from './home/about.png'
