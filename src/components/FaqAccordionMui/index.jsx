@@ -120,7 +120,6 @@ const FaqAccordionMui = () => {
         </Typography>
       </AccordionDetails>
     </Accordion>
-
   </>)
 }
 

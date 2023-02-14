@@ -6,8 +6,8 @@ export const courseApi = createApi({
   reducerPath: 'courseApi',
   baseQuery: fetchBaseQuery({baseUrl}),
   endpoints:(builder)=>({
-    getCourseByCategory: builder.query({
-      query:(category)=> category === 'all' ? '/courses' : `/courses?category=${category}`
+    getCourse: builder.query({
+      query:()=> '/courses'
     }),
 
     getCourseById: builder.query({
@@ -20,4 +20,4 @@ export const courseApi = createApi({
   })
 })
 
-export const {useGetCourseByCategoryQuery, useGetCourseByIdQuery, useGetInstructorByNameQuery} = courseApi
+export const {useGetCourseQuery, useGetCourseByIdQuery, useGetInstructorByNameQuery} = courseApi

@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'aos/dist/aos.css';
 
-import { useGetCourseByCategoryQuery} from '../../server/courseApi';
+import { useGetCourseQuery} from '../../server/courseApi';
 
 import {
   studentIcon, coursesIcon, 
@@ -29,13 +29,17 @@ import {
 
 
 const Home = () => {
-  const {category} = useSelector(state => state.app);
+  const [courseList, setCourseList] = useState([]);
 
-  const {data, error, isLoading} = useGetCourseByCategoryQuery(category);
+  const {category} = useSelector(state => state.app);
+  const {data, error, isLoading} = useGetCourseQuery();
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
-  }, [])
+    const filterData = data?.filter((item)=> category === 'all' ? item : item.category.includes(category))
+    setCourseList(filterData)
+  }, [category, data])
+
 
   return (
     <>
@@ -270,29 +274,22 @@ const Home = () => {
           <div className="popular-layout">
             <NavTap />
             <div className="popular-contint">
-              {
-                error ? (
-                  <>Oh no, there was an error</>
-                ) : isLoading ? (
-                  <>Loading...</>
-                ) : data ? (
-                  data.map((item, i) => (
-                    <CourseCard 
-                      key={i} 
-                      id={item.id} 
-                      title={item.title} 
-                      image={item.image} 
-                      rate={item.rating} 
-                      days={item.days} 
-                      levels={item.levels} 
-                      price={item.price} 
-                      sales={item.sale} 
-                      IName={item.instructor.name} 
-                      IImg={item.instructor.avatae} 
-                    />)
-                  )
-                ) : null
-              }
+              {error ? 'oh error' : isLoading ? 'loading' : data ?
+              courseList?.map((item, i) =>(
+                <CourseCard 
+                  key={i} 
+                  id={item.id} 
+                  title={item.title} 
+                  image={item.image} 
+                  rate={item.rating} 
+                  days={item.days} 
+                  levels={item.levels} 
+                  price={item.price} 
+                  sales={item.sale} 
+                  IName={item.instructor.name} 
+                  IImg={item.instructor.avatae} 
+                /> 
+              )) : null}
             </div>
           </div>
         </div>

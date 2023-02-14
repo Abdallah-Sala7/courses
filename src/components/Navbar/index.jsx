@@ -56,7 +56,7 @@ const Navbar = () => {
               </li>
 
               <li>
-                <NavLink to={"/about"}>About</NavLink>
+                <NavLink to={"/courses"}>courses</NavLink>
               </li>
               
               <li>

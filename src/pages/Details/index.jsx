@@ -31,7 +31,7 @@ const Details = () => {
     <header className='details-header'>
       <div className="container">
         <div className="details-header-info">
-          <Link to={`/${data.category}`} className="header-category">
+          <Link to={`/category/${data.category}`} className="header-category">
             {data.category}
           </Link>
           
