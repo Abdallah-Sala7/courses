@@ -2,9 +2,8 @@ import { useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper';
-import Aos from 'aos';
 
-import './home.css';
+import './style.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'aos/dist/aos.css';
@@ -35,7 +34,6 @@ const Home = () => {
   const {data, error, isLoading} = useGetCourseQuery();
 
   useEffect(() => {
-    Aos.init({ duration: 2000 });
     const filterData = data?.filter((item)=> category === 'all' ? item : item.category.includes(category))
     setCourseList(filterData)
   }, [category, data])
@@ -281,7 +279,8 @@ const Home = () => {
                   id={item.id} 
                   title={item.title} 
                   image={item.image} 
-                  rate={item.rating} 
+                  rate={item.rating}
+                  totalRate={item.totalRating} 
                   days={item.days} 
                   levels={item.levels} 
                   price={item.price} 
@@ -445,9 +444,11 @@ const Home = () => {
                 </li>
               </ul>
 
-              <a href="#" className="join-btn" data-aos="fade-up" data-aos-delay="100">
-                join now
-              </a>
+              <div className="btn" data-aos={"fade-up"}>
+                <a href="#" className="join-btn">
+                  join now
+                </a>                
+              </div>
             </div>
 
             <div className="join-img" data-aos="fade-up">

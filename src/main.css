@@ -24,24 +24,28 @@
 
 @font-face {
   font-family: 'FiraSans';
+  font-display: swap;
   src: url('./assets/fonts/firasans/FiraSans-Thin.woff2');
   font-weight: 100;
 }
 
 @font-face {
   font-family: 'FiraSans';
+  font-display: swap;
   src: url('./assets/fonts/firasans/FiraSans-Light.woff2');
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'FiraSans';
+  font-display: swap;
   src: url('./assets/fonts/firasans/FiraSans-Medium.woff2');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'FiraSans';
+  font-display: swap;
   src: url('./assets/fonts/firasans/FiraSans-Bold.woff2');
   font-weight: 700;
 }

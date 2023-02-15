@@ -48,7 +48,20 @@
 }
 
 .course-card .course-rate{
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 15px;
+}
+
+.course-card .course-rate .rate-count{
+  font-size: .8rem;
+  color: var(--dark-gray);
+}
+
+.course-card .course-rate .rate-num{
+  color: goldenrod;
+  font-size: 1rem;
 }
 
 .course-card .course-title{

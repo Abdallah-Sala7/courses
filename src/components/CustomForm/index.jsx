@@ -6,26 +6,26 @@ const CustomForm = ({isRate, isLabel, action}) => {
     <form action="">
       <div className="form-group">
         <div className="form-action">
-          {isLabel && <label htmlFor="inputName" className="form-label">Name</label>}
+          {isLabel && <label htmlFor="name-input" className="form-label">Name</label>}
 
           <div className="form-control">
             <input 
               type="text"  
-              name="inputName" 
-              id="inputName" 
+              name="name-input" 
+              id="name-input" 
               placeholder="Abdallah salah" 
             />
           </div>
         </div>
 
         <div className="form-action">
-          {isLabel && <label htmlFor="inputName" className="form-label">Email</label>}
+          {isLabel && <label htmlFor="email-input" className="form-label">Email</label>}
 
           <div className="form-control" >
             <input 
               type="email" 
-              name="inputName" 
-              id="inputName" 
+              name="email-input" 
+              id="email-input" 
               placeholder="abdallahsalah138@gmail.com" 
             />
           </div>
@@ -43,12 +43,12 @@ const CustomForm = ({isRate, isLabel, action}) => {
         </div>)}
 
         <div className="form-action">
-          {isLabel && <label htmlFor="inputName" className="form-label">Message</label>}
+          {isLabel && <label htmlFor="message" className="form-label">Message</label>}
 
           <div className="form-control" >
             <textarea 
-              name="messagetName" 
-              id="messagetName" 
+              name="message" 
+              id="message" 
               cols="30" 
               rows="10"
             ></textarea>

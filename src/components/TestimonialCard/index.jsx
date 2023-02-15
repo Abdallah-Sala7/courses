@@ -14,9 +14,9 @@ const TestimonialCard = () => {
 
   return (
     <div className="testimonial-card" data-aos="fade-up">
-      <h3 className="testimonial-title">
+      <h2 className="testimonial-title">
         great course
-      </h3>
+      </h2>
 
       <p className="testimonial-desc">
       “I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance”
@@ -30,9 +30,9 @@ const TestimonialCard = () => {
         />
 
         <div className="testimonial-info-text">
-          <h4 className="testimonial-name">
+          <h3 className="testimonial-name">
             john doe
-          </h4>
+          </h3>
 
           <p className="testimonial-job">
             web developer

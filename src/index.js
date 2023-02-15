@@ -5,7 +5,7 @@ import { store } from './store/store';
 
 import './main.css'
 
-import {Home, RootLayout, Details, Category, AuthPage, ContactUs, Courses} from './pages';
+import {Home, RootLayout, Details, AuthPage, ContactUs, Courses} from './pages';
 
 
 const router = createBrowserRouter([
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       {path:'contact', element:<ContactUs />},
       {path:'courses', element:<Courses />},
       {path:'details/:id', element:<Details />},
-      {path:'category/:category', element:<Category />},
+      {path:'courses/:category', element:<Courses />},
     ]
   },
   {

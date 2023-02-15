@@ -18,7 +18,7 @@ const Footer = () => {
           </Link>
 
           <div className="footer-social">
-            <a href="https://www.facebook.com/" target={'_blank'} title=''>
+            <a href="https://www.facebook.com/" aria-label="facebook" target={'_blank'} title=''>
               <img 
                 src={facebookLogo}
                 alt=""
@@ -26,7 +26,7 @@ const Footer = () => {
               />
             </a>
                       
-            <a href="https://www.instagram.com/" target={'_blank'} title=''>
+            <a href="https://www.instagram.com/" aria-label='instagram' target={'_blank'} title=''>
               <img
                 src={instagramLogo}
                 alt=""
@@ -34,7 +34,7 @@ const Footer = () => {
               />
             </a>
                       
-            <a href="https://www.twitter.com/" target={'_blank'} title=''>
+            <a href="https://www.twitter.com/" aria-label='twitter' target={'_blank'} title=''>
               <img
                 src={twitterLog}
                 alt=""

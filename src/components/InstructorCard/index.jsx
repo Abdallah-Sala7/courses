@@ -13,7 +13,7 @@ const InstructorCard = ({img, name, rate, job, student, courses}) => {
         />
 
         <div className="instructor-contact">
-          <a href="#" target="_blank" rel="noreferrer">
+          <a href="#" target="_blank" aria-label='facebook' rel="noreferrer">
             <img 
               src={facebookLogo} 
               alt=""
@@ -21,7 +21,7 @@ const InstructorCard = ({img, name, rate, job, student, courses}) => {
             />
           </a>
 
-          <a href="#" target="_blank" rel="noreferrer">
+          <a href="#" target="_blank" aria-label='twitter' rel="noreferrer">
             <img 
               src={twitterLog} 
               alt=""
@@ -29,7 +29,7 @@ const InstructorCard = ({img, name, rate, job, student, courses}) => {
             />          
           </a>
 
-          <a href="#" target="_blank" rel="noreferrer">
+          <a href="#" target="_blank" aria-label='instagram' rel="noreferrer">
             <img 
               src={instagramLogo}
               alt=""
@@ -44,9 +44,9 @@ const InstructorCard = ({img, name, rate, job, student, courses}) => {
           {name}
         </h2>
 
-        <h4 className="instructor-job">
+        <h3 className="instructor-job">
           {job}
-        </h4>
+        </h3>
 
         <div className="instructor-card-info">
           <div className="instructor-box">

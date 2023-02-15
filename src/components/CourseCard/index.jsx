@@ -5,14 +5,14 @@ import './style.css'
 
 import {document, clock, barChart} from '../../assets/images'
 
-const CourseCard = ({id, title, image, price, sales, days, levels, IImg, IName, rate}) => {
+const CourseCard = ({id, title, image, price, sales, days, levels, IImg, IName, rate, totalRate}) => {
   return (
-    <div className='course-card'>
+    <div className='course-card' data-aos="fade-up">
       {
         sales && <p className="sales">sale</p>
       }
       <div className='course-card-img'>
-        <Link to={`/details/${id}`} className="overlay"></Link>
+        <Link to={`/details/${id}`} aria-label={title}  className="overlay"></Link>
         <img
           src={image}
           alt={title}
@@ -22,6 +22,10 @@ const CourseCard = ({id, title, image, price, sales, days, levels, IImg, IName, 
 
       <div className='course-card-body'>
         <div className="course-rate">
+          <span className="rate-num">
+            {rate}
+          </span>
+
           <Rating 
             name='coursRate'
             value={rate}
@@ -29,10 +33,14 @@ const CourseCard = ({id, title, image, price, sales, days, levels, IImg, IName, 
             readOnly
             size='small'
           /> 
+
+          <span className="rate-count">
+            ({totalRate})
+          </span>
         </div>
 
         <h2 className='course-title'>
-          <Link to={`details/${id}`} >
+          <Link to={`/details/${id}`} >
             {title}
           </Link>
         </h2>

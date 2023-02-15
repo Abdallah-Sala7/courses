@@ -23,7 +23,6 @@ const Navbar = () => {
             <img 
               src={logoWhite}
               alt="logo"
-              loading='lazy'
             /> 
           </Link>
 

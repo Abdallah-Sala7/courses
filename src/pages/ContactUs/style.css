@@ -71,7 +71,7 @@ header.contact-us{
 
 .office-layout .contact-form{
   position: sticky;
-  top: 10px;
+  top: 85px;
   height: fit-content;
   background-color: var(--white-color);
   padding: 10px;

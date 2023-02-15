@@ -87,6 +87,12 @@ header .header-layout .header-details .header-features a{
   gap: 10px;
 }
 
+header .header-layout .header-details .header-features a img{
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
 header .header-layout .header-details .header-features a p{
   font-weight: 500;
   color: var(--white-color);
@@ -116,8 +122,14 @@ header .header-layout .header-imgs .img-box-right{
   gap: 30px;
 }
 
+header .header-layout .header-imgs .img-box-right img{
+  width: 100%;
+  height: 200px;
+}
+
 header .header-layout .header-imgs .img-box-right img:first-child{
   width: 150px;
+  height: 150px;
   object-fit: contain;
 }
 
@@ -176,12 +188,14 @@ header .wave-container{
 
 .our-clint .clint-layout .clint{
   width: 80px;
+  height: 50px;
   flex-shrink: 0;
   scroll-snap-align: start;
 }
 
 .our-clint .clint-layout .clint img{
   width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -301,7 +315,7 @@ header .wave-container{
   color: var(--white-color);
   outline: 2px solid var(--primary-color);
   background-color: var(--primary-color);
-  transition: all 0.3s ease;
+  transition: all 0.3s linear;
 }
 
 .join .join-layout .join-contint .join-btn:hover{
