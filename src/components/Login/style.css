@@ -1,8 +1,18 @@
 .auth-form{
+  position: relative;
   width: 100%;
   padding: 20px;
   border: 1px solid #EDEDED;
   border-radius: 10px;
+}
+
+.auth-form .error-msg{
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: red;
+  font-weight: 300;
 }
 
 .auth-form .auth-title{

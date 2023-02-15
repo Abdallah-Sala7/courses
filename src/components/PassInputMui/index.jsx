@@ -2,24 +2,24 @@ import './style.js'
 import { useState } from 'react';
 
 import {FormControl, OutlinedInput , IconButton, InputAdornment} from '@mui/material'
-
 import {Visibility, VisibilityOff} from '@mui/icons-material';
+
 import { passwoedStyles } from './style.js';
 
-const PassInputMui = ({action="password"}) => {
+const PassInputMui = ({action="password", passValue, id}) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleClickShowPassword = (e) => {
+  const handleClickShowPassword = () => {
     setShowPassword((show) => !show);
-    e.preventDefult();
   }
   
-  return (<>
+  return (
     <FormControl sx={passwoedStyles} variant="outlined">
       <OutlinedInput
         sx={{borderRadius:'7px'}}
-        id="outlined-adornment-password"
+        id={id}
         type={showPassword ? 'text' : 'password'}
+        onChange={(e) => passValue(e.target.value)}
         placeholder={action}
         endAdornment={
           <InputAdornment position="end">
@@ -34,7 +34,7 @@ const PassInputMui = ({action="password"}) => {
         }
       />
     </FormControl>
-  </>)
+  )
 }
 
 export default PassInputMui
