@@ -2,7 +2,7 @@ import './style.css'
 import PassInputMui from '../PassInputMui';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLoginUserMutation, useRegisterUserMutation } from '../../server/authApi';
+import { useRegisterUserMutation } from '../../server/authApi';
 
 const Register = () => { 
   const [emailValue, setEmailValue] = useState('')
@@ -10,12 +10,12 @@ const Register = () => {
   const [errorMsg, setErrorMsg] = useState('')
   
   const navigate = useNavigate()
-  const [registerUser, {data, isError, error}] = useRegisterUserMutation() ; 
+  const [registerUser, {data, isError, error, isLoading}] = useRegisterUserMutation() ; 
 
   useEffect(() => {
     if (data?.access_token) {
       localStorage.setItem(
-        "register",
+        "login",
         JSON.stringify({
           userLogin:true,
           token: data.access_token
@@ -75,8 +75,8 @@ const Register = () => {
         </div>
 
         <div className="form-group">
-          <a href="#" type={"submit"} role={"button"} onClick={(e) => register(e)}>
-            register
+          <a href="#" className={isLoading ? 'loading' : ''} type={"submit"} role={"button"} onClick={(e) => register(e)}>
+            {isLoading ? 'Loading...' : 'Register'}
           </a>
         </div>
       </form>

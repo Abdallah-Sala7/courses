@@ -8,7 +8,7 @@
 
 .auth-form .error-msg{
   position: absolute;
-  top: 40px;
+  top: -140px;
   left: 50%;
   transform: translateX(-50%);
   color: red;
@@ -58,6 +58,11 @@
   border: 2px solid var(--third-color);
   background-color: var(--third-color);
   transition: all 0.3s ease;
+}
+
+.auth-form .form-group a.loading{
+  pointer-events: none;
+  opacity: 0.8;
 }
 
 .auth-form .form-group a:hover{

@@ -9,6 +9,7 @@ export {default as TestimonialCard} from './TestimonialCard'
 export {default as CategorieBox} from './CategorieBox'
 export {default as LearnCard} from './LearnCard'
 
+export {default as WithGaurd} from './WithGaurd'
 export {default as Login} from './Login/Login'
 export {default as Register} from './Login/Register'
 

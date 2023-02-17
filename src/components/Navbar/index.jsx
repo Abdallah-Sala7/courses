@@ -1,13 +1,17 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import './style.css'
 
-import {facebookLogo, twitterLog, instagramLogo, searchIcon, shoppingIcon, menuIcon, closeIcon, logoWhite} from '../../assets/images'
-
+import {
+  facebookLogo, twitterLog, 
+  instagramLogo, searchIcon, 
+  shoppingIcon, menuIcon, 
+  closeIcon, logoWhite
+} from '../../assets/images'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [isLogin, setIsLogin] = useState(false)
+  const navigat = useNavigate()
 
   menuOpen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto'
 
@@ -15,6 +19,13 @@ const Navbar = () => {
     setMenuOpen(!menuOpen)
     e.preventDefault();
   }
+
+  const handelLogout = (e) => {
+    localStorage.removeItem('login')
+    navigat('/auth')
+    e.preventDefault();
+  }
+
   return (
     <nav className='navbar'>
       <div className='container'>
@@ -28,17 +39,9 @@ const Navbar = () => {
 
           <div className={`nav-menu ${menuOpen && 'oppenned'}`}>
             <div className="nav-header">
-              {isLogin ? <Link to={'/'}>
-                <img
-                  src={logoWhite}
-                  alt="logo"
-                  loading='lazy'
-                />
-              </Link> :
-              <Link to={'/auth'} className="login">
-                log in
-              </Link>
-              }
+              <a href='#' onClick={(e) => handelLogout(e)} className="login">
+                log out
+              </a>
             
               <a href="#" onClick={(e)=>handelMenu(e)} className="close-menu mobile-menu">
                 <img
@@ -133,9 +136,9 @@ const Navbar = () => {
               <span className='count'>1</span>
             </Link>
 
-            <Link to={'/auth'} className="login">
-              log in
-            </Link>
+            <a href='#' onClick={(e) => handelLogout(e)} className="login">
+              log out
+            </a>
           </div>
 
           <a href="#" onClick={(e)=>handelMenu(e)} className="mobile-menu">
@@ -149,7 +152,6 @@ const Navbar = () => {
       </div>
       <div onClick={handelMenu} role="button" className={`overlay ${menuOpen && 'oppenned'}`}></div>   
     </nav>
-
   )
 }
 

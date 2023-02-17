@@ -5,13 +5,16 @@ import { store } from './store/store';
 
 import './main.css'
 
+import { WithGaurd } from './components';
 import {Home, RootLayout, Details, AuthPage, ContactUs, Courses} from './pages';
 
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element: <RootLayout />,
+    element: <WithGaurd>
+      <RootLayout />
+    </WithGaurd>,
     children:[
       {index:true, element:<Home /> },
       {path:'home', element:<Home />},

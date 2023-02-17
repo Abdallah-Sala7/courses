@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
-
 import './style.css'
+import { useEffect, useState } from 'react';
 import {FormControlLabel, FormGroup, Checkbox} from '@mui/material'
 import PassInputMui from '../PassInputMui';
 import { useLoginUserMutation } from '../../server/authApi';
@@ -10,13 +9,11 @@ const Login = () => {
   const [emailValue, setEmailValue] = useState('')
   const [passwordValue, setPasswordValue] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
-  
   const navigate = useNavigate()
 
-  const [loginUser, {data, isError, error}] = useLoginUserMutation();
+  const [loginUser, {data, isError, error, isLoading}] = useLoginUserMutation();
 
   useEffect(() => {
-
     if (data?.access_token) {
       localStorage.setItem(
         "login",
@@ -77,8 +74,8 @@ const Login = () => {
         </div>
 
         <div className="form-group">
-          <a href="#" onClick={(e) => login(e)}>
-            login
+          <a href="#" className={isLoading ? 'loading' : ''} type={"submit"} role={"button"} onClick={(e) => login(e)}>
+            {isLoading ? 'Loading...' : 'Login'}
           </a>
         </div>
       </form>
