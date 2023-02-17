@@ -57,7 +57,7 @@ const Register = () => {
           <input 
             type="text"  
             placeholder='email'
-            className='form-control'
+            className={isError ? 'form-control error' : 'form-control'}
             onChange={(e) => setEmailValue(e.target.value)}
           />
         </div>

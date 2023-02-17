@@ -58,7 +58,7 @@ const Login = () => {
           <input 
             type="text"  
             placeholder='email or username'
-            className='form-control'
+            className={isError ? 'form-control error' : 'form-control'}
             onChange={(e) => setEmailValue(e.target.value)}
           />
         </div>

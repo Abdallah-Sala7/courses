@@ -36,6 +36,11 @@
   border: 1px solid #EDEDED;
 }
 
+.auth-form .form-group .form-control.error{
+  border-color: red;
+  color: red;
+}
+
 .auth-form .form-group .form-control:focus{
   border-color: var(--third-color);
 }
