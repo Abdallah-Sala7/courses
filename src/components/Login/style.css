@@ -12,6 +12,7 @@
   left: 50%;
   transform: translateX(-50%);
   color: red;
+  white-space: nowrap;
   font-weight: 300;
 }
 
@@ -41,7 +42,7 @@
   color: red;
 }
 
-.auth-form .form-group .form-control:focus{
+.auth-form .form-group .form-control:not(.error):focus{
   border-color: var(--third-color);
 }
 

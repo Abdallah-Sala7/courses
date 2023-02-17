@@ -1,0 +1,48 @@
+.profile-list{
+  display: flex;
+  gap: 10px;
+}
+
+.profile-list .profile-list-item{
+  flex-shrink: 0;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.profile-list .profile-list-item a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 15px;
+  background-color: var(--light-blue);
+  color: var(--third-color);
+  transition: all 0.6s ease;
+} 
+
+.profile-list .profile-list-item a:is(:hover, .active) {
+  background-color: var(--third-color);
+  color: var(--white-color);
+}
+
+.profile-list .profile-list-item a svg{
+  width: 15px;
+  height: 15px;
+}
+
+
+
+
+
+
+/* /////////// */
+
+@media (min-width: 992px) { 
+  .profile-list{
+    flex-direction: column;
+  }
+
+  .profile-list .profile-list-item a{
+    padding: 15px;
+  }
+}

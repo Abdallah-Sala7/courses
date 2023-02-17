@@ -1,28 +1,21 @@
 import { useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import './style.css'
 
 import {
   facebookLogo, twitterLog, 
   instagramLogo, searchIcon, 
   shoppingIcon, menuIcon, 
-  closeIcon, logoWhite
+  closeIcon, logoWhite, avatar
 } from '../../assets/images'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const navigat = useNavigate()
 
   menuOpen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto'
 
   const handelMenu = (e) => {
     setMenuOpen(!menuOpen)
-    e.preventDefault();
-  }
-
-  const handelLogout = (e) => {
-    localStorage.removeItem('login')
-    navigat('/auth')
     e.preventDefault();
   }
 
@@ -39,9 +32,13 @@ const Navbar = () => {
 
           <div className={`nav-menu ${menuOpen && 'oppenned'}`}>
             <div className="nav-header">
-              <a href='#' onClick={(e) => handelLogout(e)} className="login">
-                log out
-              </a>
+              <Link to='/profile' className="avatar">
+                <img
+                  src={avatar}
+                  alt="avatar"
+                  loading='lazy'
+                  />
+              </Link>
             
               <a href="#" onClick={(e)=>handelMenu(e)} className="close-menu mobile-menu">
                 <img
@@ -136,9 +133,13 @@ const Navbar = () => {
               <span className='count'>1</span>
             </Link>
 
-            <a href='#' onClick={(e) => handelLogout(e)} className="login">
-              log out
-            </a>
+            <Link to='/profile' className="avatar">
+              <img
+                src={avatar}
+                alt="avatar"
+                loading='lazy'
+                />
+            </Link>
           </div>
 
           <a href="#" onClick={(e)=>handelMenu(e)} className="mobile-menu">

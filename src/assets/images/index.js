@@ -62,3 +62,4 @@ export {default as categorie6} from './home/c6.svg'
 
 export {default as ali} from './ali.png'
 export {default as instructorImg} from './instr.jpeg'
+export {default as avatar} from './avatar.png'

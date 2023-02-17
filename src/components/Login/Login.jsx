@@ -10,6 +10,7 @@ const Login = () => {
   const [passwordValue, setPasswordValue] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
   const navigate = useNavigate()
+  const [isErrorState, setIsErrorState] = useState(false)
 
   const [loginUser, {data, isError, error, isLoading}] = useLoginUserMutation();
 
@@ -22,6 +23,13 @@ const Login = () => {
           token: data.access_token
         })
       )
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          email: emailValue,
+        })
+      )
       navigate('/')
       setEmailValue('')
       setPasswordValue('')
@@ -29,13 +37,20 @@ const Login = () => {
     }
 
     if (isError) {
-      setErrorMsg(error.data.message)
+      setErrorMsg(error?.data?.message)
     }
+
+    setIsErrorState(isError)
 
   }, [data, isError])
 
+  const handleEmail = (e) =>{
+    setEmailValue(e.target.value)
+    setIsErrorState(false)
+  }
+
   const login = async (e) =>{
-    e.preventDefault()
+    e.preventDefault();
     await loginUser({email: emailValue, password: passwordValue})
   }
   
@@ -58,8 +73,8 @@ const Login = () => {
           <input 
             type="text"  
             placeholder='email or username'
-            className={isError ? 'form-control error' : 'form-control'}
-            onChange={(e) => setEmailValue(e.target.value)}
+            className={isErrorState ? 'form-control error' : 'form-control'}
+            onChange={(e) => handleEmail(e)}
           />
         </div>
 

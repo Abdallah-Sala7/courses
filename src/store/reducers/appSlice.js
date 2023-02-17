@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  category : "all"
+  category : "all",
+  profileTap:'all',
+  asideTap: 'courses'
 }
 
 export const appSlice = createSlice({
@@ -10,9 +12,15 @@ export const appSlice = createSlice({
   reducers: {
     setCategoryValue: (state, action) => {
       state.category = action.payload
+    },
+    setProfileTap: (state, action) => {
+      state.profileTap = action.payload
+    },
+    setAsideTap: (state, action) => {
+      state.asideTap = action.payload
     }
   },
 })
 
-export const { setCategoryValue } = appSlice.actions
+export const { setCategoryValue, setProfileTap, setAsideTap } = appSlice.actions
 export default appSlice.reducer

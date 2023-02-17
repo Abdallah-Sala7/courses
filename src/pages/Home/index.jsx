@@ -67,7 +67,7 @@ const Home = () => {
               </div>
 
               <div className="header-features">
-                <a href="#" data-aos="fade-up" data-aos-delay="500">
+                <a href="#" data-aos="fade-up">
                   <img
                     src={studentIcon}
                     alt="students"
@@ -76,7 +76,7 @@ const Home = () => {
                   <p>Over 12 million students</p>
                 </a>
 
-                <a href="#" data-aos="fade-up" data-aos-delay="500">
+                <a href="#" data-aos="fade-up">
                   <img
                     src={coursesIcon}
                     alt="courses"
@@ -85,7 +85,7 @@ const Home = () => {
                   <p>More than 60,000 courses</p>
                 </a>
 
-                <a href="#" data-aos="fade-up" data-aos-delay="500">
+                <a href="#" data-aos="fade-up">
                   <img
                     src={learnIcon}
                     alt="learn"

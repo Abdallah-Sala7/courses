@@ -103,7 +103,8 @@ textarea, textarea:is(:focus, :active){
   display: block;
 }
 
-section{
+section,
+header{
   padding: 80px 0;
 }
 

@@ -6,7 +6,6 @@
 header .header-layout{
   display: flex;
   justify-content: space-between;
-  padding: 85px 0;
 }
 
 header .header-layout .header-details{

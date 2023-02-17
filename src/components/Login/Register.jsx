@@ -5,12 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import { useRegisterUserMutation } from '../../server/authApi';
 
 const Register = () => { 
+  const navigate = useNavigate()
+
   const [emailValue, setEmailValue] = useState('')
   const [passwordValue, setPasswordValue] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
-  
-  const navigate = useNavigate()
-  const [registerUser, {data, isError, error, isLoading}] = useRegisterUserMutation() ; 
+  const [isErrorState, setIsErrorState] = useState(false)
+
+  const [registerUser, {data, isError, error, isLoading}] = useRegisterUserMutation();   
 
   useEffect(() => {
     if (data?.access_token) {
@@ -21,6 +23,13 @@ const Register = () => {
           token: data.access_token
         })
       )
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          email: emailValue,
+        })
+      )
       navigate('/')
       setEmailValue('')
       setPasswordValue('')
@@ -28,10 +37,17 @@ const Register = () => {
     }
 
     if (isError) {
-      setErrorMsg(error.data.message)
+      setErrorMsg(error?.data?.message)
     }
 
+    setIsErrorState(isError)
+
   }, [data, isError])
+
+  const handleEmail = (e) =>{
+    setEmailValue(e.target.value)
+    setIsErrorState(false)
+  }
 
   const register = async (e) =>{
     e.preventDefault()
@@ -57,8 +73,8 @@ const Register = () => {
           <input 
             type="text"  
             placeholder='email'
-            className={isError ? 'form-control error' : 'form-control'}
-            onChange={(e) => setEmailValue(e.target.value)}
+            className={isErrorState ? 'form-control error' : 'form-control'}
+            onChange={(e) => handleEmail(e)}
           />
         </div>
 
