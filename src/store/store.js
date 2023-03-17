@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { authApi } from "../server/authApi";
 import { courseApi } from "../server/courseApi";
 import appSlice from "./reducers/appSlice";
+import cartSlice from "./reducers/cartSlice";
 import filterSlice from "./reducers/filterSlice";
 
 export const store = configureStore({
@@ -9,7 +10,8 @@ export const store = configureStore({
     app : appSlice,
     filters : filterSlice,
     courseApi : courseApi.reducer,
-    authApi: authApi.reducer
+    authApi: authApi.reducer,
+    cart: cartSlice
   },
 
   middleware: (getDefaultMiddleware) =>

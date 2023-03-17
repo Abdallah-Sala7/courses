@@ -25,11 +25,7 @@ const ProfileSide = () => {
     <div>
       <ul className="profile-list">
         <li className="profile-list-item">
-          <NavLink
-            to={'/profile'}
-            end
-            onClick={() => handleAside("courses")}
-          >
+          <NavLink to={"/profile"} end onClick={() => handleAside("courses")}>
             <ImportContacts />
 
             <span>courses</span>
@@ -37,10 +33,7 @@ const ProfileSide = () => {
         </li>
 
         <li className="profile-list-item">
-          <NavLink
-            to={'quizzes'}
-            onClick={()=> handleAside("quizzes")}
-          >
+          <NavLink to={"quizzes"} onClick={() => handleAside("quizzes")}>
             <Extension />
 
             <span>quizzes</span>
@@ -48,10 +41,7 @@ const ProfileSide = () => {
         </li>
 
         <li className="profile-list-item">
-          <NavLink
-            to={'settings'}
-            onClick={()=>handleAside("settings")}
-          >
+          <NavLink to={"settings"} onClick={() => handleAside("settings")}>
             <Settings />
 
             <span>settings</span>
@@ -59,10 +49,7 @@ const ProfileSide = () => {
         </li>
 
         <li className="profile-list-item">
-          <NavLink
-            to={'/auth'}
-            onClick={handleLogout}
-          >
+          <NavLink to={"/auth"} onClick={handleLogout}>
             <Logout />
 
             <span>logout</span>

@@ -1,62 +1,88 @@
-import { useEffect, useState} from 'react';
-import { useSelector } from 'react-redux';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper';
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper";
 
-import './style.css';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'aos/dist/aos.css';
+import "./style.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "aos/dist/aos.css";
 
-import { useGetCourseQuery} from '../../server/courseApi';
-
-import {
-  studentIcon, coursesIcon, 
-  learnIcon, homeImgOne, homeImgTow,
-  homeImgThree, brandOne, brandTow, 
-  brandThree, brandFour,brandFive, brandSix, 
-  categorie1, categorie2, categorie3, categorie4, 
-  categorie5, categorie6, check, learning, working, 
-  education, instructorImg
-} from '../../assets/images';
+import { useGetCourseQuery } from "../../server/courseApi";
 
 import {
-  CourseCard, 
-  TestimonialCard, LearnCard, 
-  CategorieBox, NavTap, InstructorCard
-} from '../../components';
+  studentIcon,
+  coursesIcon,
+  learnIcon,
+  homeImgOne,
+  homeImgTow,
+  homeImgThree,
+  brandOne,
+  brandTow,
+  brandThree,
+  brandFour,
+  brandFive,
+  brandSix,
+  categorie1,
+  categorie2,
+  categorie3,
+  categorie4,
+  categorie5,
+  categorie6,
+  check,
+  learning,
+  working,
+  education,
+  instructorImg,
+} from "../../assets/images";
 
+import {
+  CourseCard,
+  TestimonialCard,
+  LearnCard,
+  CategorieBox,
+  NavTap,
+  InstructorCard,
+} from "../../components";
 
 const Home = () => {
   const [courseList, setCourseList] = useState([]);
 
-  const {category} = useSelector(state => state.app);
-  const {data, error, isLoading} = useGetCourseQuery();
+  const { category } = useSelector((state) => state.app);
+  const { data, error, isLoading } = useGetCourseQuery();
 
   useEffect(() => {
-    const filterData = data?.filter((item)=> category === 'all' ? item : item.category.includes(category))
-    setCourseList(filterData)
-  }, [category, data])
-
+    const filterData = data?.filter((item) =>
+      category === "all" ? item : item.category.includes(category)
+    );
+    setCourseList(filterData);
+  }, [category, data]);
 
   return (
     <>
-      <header className='home'>
+      <header className="home">
         <div className="container">
           <div className="header-layout">
             <div className="header-details">
               <h1 className="header-title" data-aos="fade-up">
                 learn new skills online with top
-                <span>
-                  Educators
-                </span>
+                <span>Educators</span>
               </h1>
 
-              <p className="header-info" data-aos="fade-up" data-aos-delay="200" >
-                build skills with courses, certificates, and degrees online from world-class universities and companies.
+              <p
+                className="header-info"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                build skills with courses, certificates, and degrees online from
+                world-class universities and companies.
               </p>
 
-              <div className="header-btn" data-aos="fade-up" data-aos-delay="400">
+              <div
+                className="header-btn"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <a href="#" className="join-btn">
                   join for free
                 </a>
@@ -68,29 +94,17 @@ const Home = () => {
 
               <div className="header-features">
                 <a href="#" data-aos="fade-up">
-                  <img
-                    src={studentIcon}
-                    alt="students"
-                    loading='lazy'
-                  />
+                  <img src={studentIcon} alt="students" loading="lazy" />
                   <p>Over 12 million students</p>
                 </a>
 
                 <a href="#" data-aos="fade-up">
-                  <img
-                    src={coursesIcon}
-                    alt="courses"
-                    loading='lazy'
-                  />
+                  <img src={coursesIcon} alt="courses" loading="lazy" />
                   <p>More than 60,000 courses</p>
                 </a>
 
                 <a href="#" data-aos="fade-up">
-                  <img
-                    src={learnIcon}
-                    alt="learn"
-                    loading='lazy'
-                  />
+                  <img src={learnIcon} alt="learn" loading="lazy" />
                   <p>Learn anything online</p>
                 </a>
               </div>
@@ -101,16 +115,16 @@ const Home = () => {
                 <img
                   src={homeImgOne}
                   alt="img1"
-                  loading='lazy'
+                  loading="lazy"
                   data-aos="fade-up"
                 />
               </div>
 
-              <div className="img-box-right" >
+              <div className="img-box-right">
                 <img
                   src={homeImgTow}
                   alt="img2"
-                  loading='lazy'
+                  loading="lazy"
                   data-aos="fade-up"
                   data-aos-delay="300"
                 />
@@ -118,7 +132,7 @@ const Home = () => {
                 <img
                   src={homeImgThree}
                   alt="img3"
-                  loading='lazy'
+                  loading="lazy"
                   data-aos="fade-up"
                   data-aos-delay="600"
                 />
@@ -142,51 +156,27 @@ const Home = () => {
 
           <div className="clint-layout" data-aos="fade-up">
             <a href="#" className="clint">
-              <img
-                src={brandOne}
-                alt="clint"
-                loading='lazy'
-              />
+              <img src={brandOne} alt="clint" loading="lazy" />
             </a>
 
             <a href="#" className="clint">
-              <img
-                src={brandTow}
-                alt="clint"
-                loading='lazy'
-              />
+              <img src={brandTow} alt="clint" loading="lazy" />
             </a>
 
             <a href="#" className="clint">
-              <img
-                src={brandThree}
-                alt="clint"
-                loading='lazy'
-              />
+              <img src={brandThree} alt="clint" loading="lazy" />
             </a>
 
             <a href="#" className="clint">
-              <img
-                src={brandFour}
-                alt="clint"
-                loading='lazy'
-              />
+              <img src={brandFour} alt="clint" loading="lazy" />
             </a>
 
             <a href="#" className="clint">
-              <img
-                src={brandFive}
-                alt="clint"
-                loading='lazy'
-              />
+              <img src={brandFive} alt="clint" loading="lazy" />
             </a>
 
             <a href="#" className="clint">
-              <img
-                src={brandSix}
-                alt="clint"
-                loading='lazy'
-              />
+              <img src={brandSix} alt="clint" loading="lazy" />
             </a>
           </div>
         </div>
@@ -232,27 +222,51 @@ const Home = () => {
               className="mySwiper"
             >
               <SwiperSlide>
-                <CategorieBox img={categorie1} title={'Graphic Design'} info={'1 Courses'} />
+                <CategorieBox
+                  img={categorie1}
+                  title={"Graphic Design"}
+                  info={"1 Courses"}
+                />
               </SwiperSlide>
 
               <SwiperSlide>
-              <CategorieBox img={categorie2} title={'Sales Marketing'} info={'2 Courses'} />
+                <CategorieBox
+                  img={categorie2}
+                  title={"Sales Marketing"}
+                  info={"2 Courses"}
+                />
               </SwiperSlide>
 
               <SwiperSlide>
-                <CategorieBox img={categorie3} title={'IT and Software'} info={'3 Courses'} />
+                <CategorieBox
+                  img={categorie3}
+                  title={"IT and Software"}
+                  info={"3 Courses"}
+                />
               </SwiperSlide>
 
               <SwiperSlide>
-                <CategorieBox img={categorie4} title={'Art & Humanities'} info={'9 Courses'} />
+                <CategorieBox
+                  img={categorie4}
+                  title={"Art & Humanities"}
+                  info={"9 Courses"}
+                />
               </SwiperSlide>
 
               <SwiperSlide>
-                <CategorieBox img={categorie5} title={'Personal Development'} info={'5 Courses'} />
+                <CategorieBox
+                  img={categorie5}
+                  title={"Personal Development"}
+                  info={"5 Courses"}
+                />
               </SwiperSlide>
 
               <SwiperSlide>
-                <CategorieBox img={categorie6} title={'Finance & Accounting'} info={'7 Courses'} />
+                <CategorieBox
+                  img={categorie6}
+                  title={"Finance & Accounting"}
+                  info={"7 Courses"}
+                />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -272,23 +286,15 @@ const Home = () => {
           <div className="popular-layout">
             <NavTap />
             <div className="popular-contint">
-              {error ? 'oh error' : isLoading ? 'loading' : data ?
-              courseList?.map((item, i) =>(
-                <CourseCard 
-                  key={i} 
-                  id={item.id} 
-                  title={item.title} 
-                  image={item.image} 
-                  rate={item.rating}
-                  totalRate={item.totalRating} 
-                  days={item.days} 
-                  levels={item.levels} 
-                  price={item.price} 
-                  sales={item.sale} 
-                  IName={item.instructor.name} 
-                  IImg={item.instructor.avatae} 
-                /> 
-              )) : null}
+              {error
+                ? "oh error"
+                : isLoading
+                ? "loading"
+                : data
+                ? courseList?.map((item, i) => (
+                    <CourseCard key={i} item={item} />
+                  ))
+                : null}
             </div>
           </div>
         </div>
@@ -338,53 +344,49 @@ const Home = () => {
                 <SwiperSlide>
                   <TestimonialCard />
                 </SwiperSlide>
-              </Swiper>              
+              </Swiper>
             </div>
 
             <div className="testimonial-details">
               <div className="details-box" data-aos="fade-up">
-                <p className="details-number">
-                  380,000+
-                </p>
+                <p className="details-number">380,000+</p>
 
-                <p className="details-info">
-                  students enrolled
-                </p>
+                <p className="details-info">students enrolled</p>
               </div>
 
-              <div className="details-box" data-aos="fade-up" data-aos-delay="100">
-                <p className="details-number">
-                  50,000+
-                </p>
+              <div
+                className="details-box"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <p className="details-number">50,000+</p>
 
-                <p className="details-info">
-                  Total course views
-                </p>
+                <p className="details-info">Total course views</p>
               </div>
 
-              <div className="details-box" data-aos="fade-up" data-aos-delay="200">
-                <p className="details-number">
-                  18,000+
-                </p>
+              <div
+                className="details-box"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <p className="details-number">18,000+</p>
 
-                <p className="details-info">
-                  Five-star course reviews
-                </p>
+                <p className="details-info">Five-star course reviews</p>
               </div>
 
-              <div className="details-box" data-aos="fade-up" data-aos-delay="300">
-                <p className="details-number">
-                  100,000+
-                </p>
+              <div
+                className="details-box"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <p className="details-number">100,000+</p>
 
-                <p className="details-info">
-                  students comunity
-                </p>
+                <p className="details-info">students comunity</p>
               </div>
             </div>
           </div>
         </div>
-      </section> 
+      </section>
 
       <section className="join">
         <div className="container">
@@ -395,50 +397,35 @@ const Home = () => {
               </h1>
 
               <p className="section-info" data-aos="fade-up">
-                Use the list below to bring attention to your product’s key differentiator.
+                Use the list below to bring attention to your product’s key
+                differentiator.
               </p>
 
               <ul className="join-feature" data-aos="fade-up">
                 <li>
-                  <span className='join-icon'>
-                    <img 
-                      src={check}
-                      alt=""
-                      loading='lazy' 
-                    />
+                  <span className="join-icon">
+                    <img src={check} alt="" loading="lazy" />
                   </span>
                   <p>Hand-Picked Authors</p>
                 </li>
 
                 <li>
-                  <span className='join-icon'>
-                    <img 
-                      src={check}
-                      alt=""
-                      loading='lazy' 
-                    />
+                  <span className="join-icon">
+                    <img src={check} alt="" loading="lazy" />
                   </span>
                   <p>Easy To Follow Curriculum</p>
                 </li>
 
                 <li>
-                  <span className='join-icon'>
-                    <img 
-                      src={check}
-                      alt=""
-                      loading='lazy' 
-                    />
+                  <span className="join-icon">
+                    <img src={check} alt="" loading="lazy" />
                   </span>
                   <p>Free Courses</p>
                 </li>
 
                 <li>
-                  <span className='join-icon'>
-                    <img 
-                      src={check}
-                      alt=""
-                      loading='lazy' 
-                    />
+                  <span className="join-icon">
+                    <img src={check} alt="" loading="lazy" />
                   </span>
                   <p>Money-Back Guarantee</p>
                 </li>
@@ -447,16 +434,12 @@ const Home = () => {
               <div className="btn" data-aos={"fade-up"}>
                 <a href="#" className="join-btn">
                   join now
-                </a>                
+                </a>
               </div>
             </div>
 
             <div className="join-img" data-aos="fade-up">
-              <img
-                src={homeImgOne}
-                alt=""
-                loading='lazy'
-              />
+              <img src={homeImgOne} alt="" loading="lazy" />
             </div>
           </div>
         </div>
@@ -473,9 +456,27 @@ const Home = () => {
           </p>
 
           <div className="learn-layout">
-            <LearnCard logo={learning} title={'01. Learn'} desc={'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.'} />
-            <LearnCard logo={education} title={'02. Graduate'} desc={'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.'} />
-            <LearnCard logo={working} title={'03. Work'} desc={'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua.'} />
+            <LearnCard
+              logo={learning}
+              title={"01. Learn"}
+              desc={
+                "Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua."
+              }
+            />
+            <LearnCard
+              logo={education}
+              title={"02. Graduate"}
+              desc={
+                "Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua."
+              }
+            />
+            <LearnCard
+              logo={working}
+              title={"03. Work"}
+              desc={
+                "Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliqua."
+              }
+            />
           </div>
         </div>
       </section>
@@ -487,20 +488,48 @@ const Home = () => {
           </h1>
 
           <div className="instructors-info" data-aos="fade-up">
-            <p className='instructors-desc'>
+            <p className="instructors-desc">
               Explore thousands of courses from top universities and companies
             </p>
 
-            <a href="#" className='instructors-btn'>
+            <a href="#" className="instructors-btn">
               view all instructors
             </a>
           </div>
 
           <div className="instructors-layout">
-            <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
-            <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
-            <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
-            <InstructorCard name='ali tufan' img={instructorImg} job='Web Designer' rate={3.5} student={47} courses={4} />
+            <InstructorCard
+              name="ali tufan"
+              img={instructorImg}
+              job="Web Designer"
+              rate={3.5}
+              student={47}
+              courses={4}
+            />
+            <InstructorCard
+              name="ali tufan"
+              img={instructorImg}
+              job="Web Designer"
+              rate={3.5}
+              student={47}
+              courses={4}
+            />
+            <InstructorCard
+              name="ali tufan"
+              img={instructorImg}
+              job="Web Designer"
+              rate={3.5}
+              student={47}
+              courses={4}
+            />
+            <InstructorCard
+              name="ali tufan"
+              img={instructorImg}
+              job="Web Designer"
+              rate={3.5}
+              student={47}
+              courses={4}
+            />
           </div>
         </div>
       </section>
@@ -512,14 +541,14 @@ const Home = () => {
               Join more than <span>10 million learners</span> worldwide
             </h1>
 
-            <a href="#" role='button' className="start-learning-btn">
+            <a href="#" role="button" className="start-learning-btn">
               start learning for free
             </a>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

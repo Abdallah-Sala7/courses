@@ -5,12 +5,18 @@ import { store } from "./store/store";
 
 import "./main.css";
 
-import { WithGaurd } from "./components";
+import { Login, Register, WithGaurd } from "./components";
 import {
-  Home, RootLayout, Details,
-  AuthPage, ContactUs, Courses,
-  Profile, ProfileCourses, Quizzes,
-  Settings
+  Home,
+  RootLayout,
+  Details,
+  AuthPage,
+  ContactUs,
+  Courses,
+  Profile,
+  ProfileCourses,
+  Quizzes,
+  Settings,
 } from "./pages";
 
 const router = createBrowserRouter([
@@ -24,12 +30,15 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "home", element: <Home /> },
-      { path: "contact", element: <ContactUs />},
-      { path: "profile", element: <Profile />, children: [
-        {index: true, element: <ProfileCourses />},
-        {path: 'quizzes', element: <Quizzes />},
-        {path: 'settings', element: <Settings />},
-      ]
+      { path: "contact", element: <ContactUs /> },
+      {
+        path: "profile",
+        element: <Profile />,
+        children: [
+          { index: true, element: <ProfileCourses /> },
+          { path: "quizzes", element: <Quizzes /> },
+          { path: "settings", element: <Settings /> },
+        ],
       },
       { path: "courses", element: <Courses /> },
       { path: "details/:id", element: <Details /> },
@@ -39,6 +48,11 @@ const router = createBrowserRouter([
   {
     path: "auth",
     element: <AuthPage />,
+    children: [
+      { index: true, element: <Login /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+    ],
   },
 ]);
 

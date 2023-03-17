@@ -1,112 +1,104 @@
-import './style.css'
+import "./style.css";
 
-import {CourseCard, CourseFilter} from '../../components'
-import { useGetCourseQuery } from '../../server/courseApi'
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { closeIcon, listIcon } from '../../assets/images'
-import { useParams } from 'react-router-dom'
+import { CourseCard, CourseFilter } from "../../components";
+import { useGetCourseQuery } from "../../server/courseApi";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { closeIcon, listIcon } from "../../assets/images";
+import { useParams } from "react-router-dom";
 
 const Courses = () => {
   const [openFilterMenu, setOpenFilterMenu] = useState(false);
   const [categoryParm, setCategoryParm] = useState(false);
   const [coursesItems, setCoursesItems] = useState([]);
 
-  const {data, isLoading, isError} = useGetCourseQuery();
-  const {category, levels, instructor, rating, search} = useSelector(state => state.filters);
+  const { data, isLoading } = useGetCourseQuery();
+  const { category, levels, instructor, rating, search } = useSelector(
+    (state) => state.filters
+  );
 
-  const param = useParams()
+  const param = useParams();
 
   useEffect(() => {
     let filterData = data;
 
     if (param.category) {
-      filterData = filterData?.filter(item => item.category === param.category) 
-      console.log(param.category , 1);
-      setCategoryParm(true)
-    }else setCategoryParm(false)
+      filterData = filterData?.filter(
+        (item) => item.category === param.category
+      );
+
+      setCategoryParm(true);
+    } else setCategoryParm(false);
 
     if (category.length > 0) {
-      filterData = filterData?.filter(item => category.includes(item.category)) 
+      filterData = filterData?.filter((item) =>
+        category.includes(item.category)
+      );
     }
 
     if (levels.length > 0) {
-      filterData = filterData?.filter(item => levels.includes(item.levels)) 
+      filterData = filterData?.filter((item) => levels.includes(item.levels));
     }
 
     if (instructor.length > 0) {
-      filterData = filterData?.filter(item => instructor.includes(item.instructor.name)) 
+      filterData = filterData?.filter((item) =>
+        instructor.includes(item.instructor.name)
+      );
     }
 
     if (rating > 0) {
-      filterData = filterData?.filter(item => item.rating >= rating) 
+      filterData = filterData?.filter((item) => item.rating >= rating);
     }
 
     if (search) {
-      filterData = filterData?.filter(item => item.title.toString().toLowerCase()
-        .includes(search.toString().toLowerCase())
-      ) 
+      filterData = filterData?.filter((item) =>
+        item.title
+          .toString()
+          .toLowerCase()
+          .includes(search.toString().toLowerCase())
+      );
     }
 
-    setCoursesItems(filterData)
+    setCoursesItems(filterData);
+  }, [category, data, levels, instructor, rating, search, param]);
 
-  }, [category, data, levels, instructor, rating, search, param])
-  
-  const handleFilterMenu = () =>{
-    setOpenFilterMenu(!openFilterMenu)
-  }
+  const handleFilterMenu = () => {
+    setOpenFilterMenu(!openFilterMenu);
+  };
 
-  if (isLoading) return 'loading.......'
+  if (isLoading) return "loading.......";
 
   return (
-    <section className='courses-section'>
+    <section className="courses-section">
       <div className="container">
         <div className="courses-layout">
-          <div className={`courses-filter ${openFilterMenu && 'oppenned'}`}>
+          <div className={`courses-filter ${openFilterMenu && "oppenned"}`}>
             <CourseFilter categoryParm={categoryParm} />
           </div>
 
           <div className="courses-contint">
-            {coursesItems?.map((item, i) =>(
-              <CourseCard
-                key={i} 
-                id={item.id} 
-                title={item.title} 
-                image={item.image} 
-                rate={item.rating} 
-                totalRate={item.totalRating}
-                days={item.days} 
-                levels={item.levels} 
-                price={item.price} 
-                sales={item.sale} 
-                IName={item.instructor.name} 
-                IImg={item.instructor.avatae} 
-                
-              />
+            {coursesItems?.map((item, i) => (
+              <CourseCard item={item} />
             ))}
           </div>
         </div>
       </div>
 
-      <button className='handle-filter-menu' onClick={handleFilterMenu}>
-        {
-          openFilterMenu ?
-          <img 
-            src={closeIcon} 
-            alt="close icon" 
-            loading='lazy'
-          /> :    
-          <img 
-            src={listIcon} 
-            alt="close icon" 
-            loading='lazy'
-          />          
-        }
+      <button className="handle-filter-menu" onClick={handleFilterMenu}>
+        {openFilterMenu ? (
+          <img src={closeIcon} alt="close icon" loading="lazy" />
+        ) : (
+          <img src={listIcon} alt="close icon" loading="lazy" />
+        )}
       </button>
 
-      <div className={`overlay ${openFilterMenu && 'oppenned'}`} role="button" onClick={handleFilterMenu}></div>
+      <div
+        className={`overlay ${openFilterMenu && "oppenned"}`}
+        role="button"
+        onClick={handleFilterMenu}
+      ></div>
     </section>
-  )
-}
+  );
+};
 
-export default Courses
+export default Courses;

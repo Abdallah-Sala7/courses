@@ -1,37 +1,34 @@
-import { useState } from 'react'
-import {Login, Register} from '../../components';
-
-import './style.css'
+import "./style.css";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 const AuthPage = () => {
-  const [authContint, setAuthContint] = useState('login');
-  
-  const handleAuthContint = (e, val) => {
-    setAuthContint(val);
-    e.preventDefault();
-  }
+  const location = useLocation().pathname.split("/")[2];
 
   return (
-    <section className='auth'>
+    <section className="auth">
       <div className="container">
         <div className="auth-btns">
-          <a href="#" onClick={(e) => handleAuthContint(e, 'login')} className={`login-btn ${authContint == 'login' && 'active'}`}>
+          <Link
+            to={"login"}
+            className={`login-btn ${location !== "register" && "active"}`}
+          >
             login
-          </a>
+          </Link>
 
-          <a href="#" onClick={(e) => handleAuthContint(e, 'register')} className={`login-btn ${authContint == 'register' && 'active'}`}>
+          <Link
+            to={"register"}
+            className={`login-btn ${location === "register" && "active"}`}
+          >
             register
-          </a>
+          </Link>
         </div>
 
         <div className="auth-layout">
-          {
-            authContint === 'register' ? <Register /> : <Login />
-          }
+          <Outlet />
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AuthPage
+export default AuthPage;
