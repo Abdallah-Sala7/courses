@@ -1,6 +1,6 @@
 import "./style.css";
 
-import { CourseCard, CourseFilter } from "../../components";
+import { CourseCard, CourseFilter, Loading } from "../../components";
 import { useGetCourseQuery } from "../../server/courseApi";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -66,7 +66,9 @@ const Courses = () => {
     setOpenFilterMenu(!openFilterMenu);
   };
 
-  if (isLoading) return "loading.......";
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <section className="courses-section">

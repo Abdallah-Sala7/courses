@@ -43,6 +43,7 @@ import {
   CategorieBox,
   NavTap,
   InstructorCard,
+  CardLoading,
 } from "../../components";
 
 const Home = () => {
@@ -289,7 +290,12 @@ const Home = () => {
               {error
                 ? "oh error"
                 : isLoading
-                ? "loading"
+                ? (<>
+                  <CardLoading />
+                  <CardLoading />
+                  <CardLoading />
+                  <CardLoading />
+                </>)
                 : data
                 ? courseList?.map((item, i) => (
                     <CourseCard key={i} item={item} />

@@ -2,6 +2,9 @@ export {default as Navbar} from './Navbar'
 export {default as NavTap} from './NavTap'
 export {default as Footer} from './Footer'
 
+export {default as CardLoading} from './Loading/CardLoading'
+export {default as Loading} from './Loading/Loading'
+
 export {default as CourseCard} from './CourseCard'
 export {default as InstructorCard} from './InstructorCard'
 export {default as ReviewCard} from './ReviewCard'

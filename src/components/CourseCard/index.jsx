@@ -20,17 +20,17 @@ const CourseCard = ({ item }) => {
 
       <div className="course-card-body">
         <div className="course-rate">
-          <span className="rate-num">{item.rate}</span>
+          <span className="rate-num">{item.rating}</span>
 
           <Rating
             name="coursRate"
-            value={item.rate}
+            value={item.rating}
             precision={0.5}
             readOnly
             size="small"
           />
 
-          <span className="rate-count">({item.totalRate})</span>
+          <span className="rate-count">({item.totalRating})</span>
         </div>
 
         <h2 className="course-title">
