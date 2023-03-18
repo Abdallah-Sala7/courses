@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom'
 import Aos from 'aos';
 
-import {Footer, Navbar} from '../components'
+import {Footer, Navbar, ScrollToTop} from '../components'
 
 const RootLayout = () => {
   useEffect(() => {
@@ -11,6 +11,7 @@ const RootLayout = () => {
   
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <main>
         <Outlet />

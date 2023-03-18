@@ -1,4 +1,3 @@
-import { Rating } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 
 import "./style.css";
@@ -14,7 +13,13 @@ import {
   star,
 } from "../../assets/images";
 
-import { ReviewCard, CustomForm, CourseWidget, Loading } from "../../components";
+import {
+  ReviewCard,
+  CustomForm,
+  CourseWidget,
+  Loading,
+  RatingBox,
+} from "../../components";
 
 const Details = () => {
   const param = useParams();
@@ -39,19 +44,7 @@ const Details = () => {
             <p className="course-desc">{data.description}</p>
 
             <div className="course-details-info">
-              <div className="details-info-box">
-                <p className="rate-num">{data.rating}</p>
-
-                <Rating
-                  name="read-only"
-                  size="small"
-                  value={data.rating}
-                  precision={0.5}
-                  readOnly
-                />
-
-                <p className="info-box-text">({data.totalRating})</p>
-              </div>
+              <RatingBox rating={data.rating} totalRating={data.totalRating} />
 
               <div className="details-info-box">
                 <img src={reading} alt="student icon" loading="lazy" />

@@ -1,0 +1,18 @@
+
+.cart-card-features .info-box-text{
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--dark-gray);
+}
+
+.cart-card-features .details-info-box{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-card-features .details-info-box .rate-num{
+  color: goldenrod;
+  font-weight: 700;
+  font-family: cursive;
+}

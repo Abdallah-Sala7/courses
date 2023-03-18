@@ -57,13 +57,7 @@
   font-size: 0.8rem;
   font-weight: 300;
   color: var(--dark-gray);
-}
-
-.course-details-info .details-info-box .rate-num{
-  color: goldenrod;
-  font-weight: 700;
-  font-family: cursive;
-}
+} 
 
 .details-header-info .instructor{
   display: flex;

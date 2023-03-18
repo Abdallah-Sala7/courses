@@ -11,6 +11,10 @@ export {default as ReviewCard} from './ReviewCard'
 export {default as TestimonialCard} from './TestimonialCard'
 export {default as CategorieBox} from './CategorieBox'
 export {default as LearnCard} from './LearnCard'
+export {default as CartCard} from './CartCard'
+export {default as RatingBox} from './RatingBox'
+
+
 
 export {default as WithGaurd} from './WithGaurd'
 export {default as Login} from './Login/Login'
@@ -21,3 +25,6 @@ export {default as CourseWidget} from './CourseWidget'
 export {default as FaqAccordionMui} from './FaqAccordionMui'
 export {default as CourseFilter} from './CourseFilter'
 export {default as ProfileAside} from './ProfileAside'
+
+
+export {default as ScrollToTop} from './ScrollToTop'

@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { total } = useSelector((state) => state.cart);
+  const { count } = useSelector((state) => state.cart);
 
   menuOpen
     ? (document.body.style.overflow = "hidden")
@@ -113,9 +113,9 @@ const Navbar = () => {
               <img src={searchIcon} alt="serch" loading="lazy" />
             </a>
 
-            <Link to="/" className="bag">
+            <Link to="cart" className="bag">
               <img src={shoppingIcon} alt="serch" loading="lazy" />
-              <span className="count">{total}</span>
+              <span className="count">{count}</span>
             </Link>
 
             <Link to="/profile" className="avatar">

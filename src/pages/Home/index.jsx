@@ -287,20 +287,18 @@ const Home = () => {
           <div className="popular-layout">
             <NavTap />
             <div className="popular-contint">
-              {error
-                ? "oh error"
-                : isLoading
-                ? (<>
+              {error ? (
+                "oh error"
+              ) : isLoading ? (
+                <>
                   <CardLoading />
                   <CardLoading />
                   <CardLoading />
                   <CardLoading />
-                </>)
-                : data
-                ? courseList?.map((item, i) => (
-                    <CourseCard key={i} item={item} />
-                  ))
-                : null}
+                </>
+              ) : data ? (
+                courseList?.map((item, i) => <CourseCard key={i} item={item} />)
+              ) : null}
             </div>
           </div>
         </div>

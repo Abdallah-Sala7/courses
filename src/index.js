@@ -17,6 +17,7 @@ import {
   ProfileCourses,
   Quizzes,
   Settings,
+  Cart,
 } from "./pages";
 
 const router = createBrowserRouter([
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: "courses", element: <Courses /> },
       { path: "details/:id", element: <Details /> },
       { path: "courses/:category", element: <Courses /> },
+      { path: "cart", element: <Cart /> },
     ],
   },
   {
